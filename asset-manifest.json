@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ACM-CMU/acm-cmu.github.io/static/css/main.28c667a5.css",
-    "main.js": "/ACM-CMU/acm-cmu.github.io/static/js/main.e7990b2a.js",
-    "static/js/787.8641dad1.chunk.js": "/ACM-CMU/acm-cmu.github.io/static/js/787.8641dad1.chunk.js",
-    "index.html": "/ACM-CMU/acm-cmu.github.io/index.html",
-    "main.28c667a5.css.map": "/ACM-CMU/acm-cmu.github.io/static/css/main.28c667a5.css.map",
-    "main.e7990b2a.js.map": "/ACM-CMU/acm-cmu.github.io/static/js/main.e7990b2a.js.map",
-    "787.8641dad1.chunk.js.map": "/ACM-CMU/acm-cmu.github.io/static/js/787.8641dad1.chunk.js.map"
+    "main.css": "/acm-cmu.github.io/static/css/main.28c667a5.css",
+    "main.js": "/acm-cmu.github.io/static/js/main.7f075d33.js",
+    "static/js/787.8641dad1.chunk.js": "/acm-cmu.github.io/static/js/787.8641dad1.chunk.js",
+    "index.html": "/acm-cmu.github.io/index.html",
+    "main.28c667a5.css.map": "/acm-cmu.github.io/static/css/main.28c667a5.css.map",
+    "main.7f075d33.js.map": "/acm-cmu.github.io/static/js/main.7f075d33.js.map",
+    "787.8641dad1.chunk.js.map": "/acm-cmu.github.io/static/js/787.8641dad1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28c667a5.css",
-    "static/js/main.e7990b2a.js"
+    "static/js/main.7f075d33.js"
   ]
 }
