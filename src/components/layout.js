@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./layout.css";
 
 export default function Layout({ children }) {
@@ -7,29 +8,29 @@ export default function Layout({ children }) {
       <div id="navbar">
         <div id="bash">bash</div>
         <input id="menu-btn" type="checkbox" />
-        <label id="menu-icon" for="menu-btn">
-          <span class="navicon"></span>
+        <label id="menu-icon" htmlFor="menu-btn">
+          <span className="navicon"></span>
         </label>
         <ul id="navigation">
           <li>
-            <a href="/welcome" id="welcome">
+            <Link to="/welcome" id="welcome">
               Welcome
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/aboutus" id="aboutus">
+            <Link to="/aboutus" id="aboutus">
               About_us
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/events" id="events">
+            <Link to="/events" id="events">
               Events
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="sponsors" id="sponsors">
+            <Link to="/sponsors" id="sponsors">
               Sponsors
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
