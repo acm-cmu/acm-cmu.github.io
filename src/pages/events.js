@@ -15,11 +15,11 @@ export default function Events() {
             cream socials for the general CMU community.
           </div>
           <div class="grid" id="events-grid">
-            <a href="http://hackcmu.org/">
-              <img id="hackcmu" src="images/hackcmu2022.png" />
+            <a href="https://www.acmatcmu.com/hackcmu/">
+              <img id="hackcmu" src="images/hackcmu2023.png" />
             </a>
-            <a>Algorithms With a Purpose 2023 - Coming Soon!</a>
-            <a>HackBerry Pi 2023 - Coming Soon!</a>
+            <a>Algorithms With a Purpose 2024 - Coming Soon!</a>
+            <a>HackBerry Pi 2024 - Coming Soon!</a>
           </div>
         </div>
       </span>
