@@ -20,25 +20,75 @@ export default function Sponsors() {
           </div>
           <div class="plat-tier-label">Plat Tier</div>
           <div class="grid" id="logo-grid">
-            <img id="citadel" src="images/citadel.png" />
+            <img
+              id="citadel"
+              src="images/citadel.png"
+              style={{ width: "150px", height: "auto" }} // Adjust the width as needed
+            />
+            <img
+              id="tradedesk"
+              src="images/tradedesk.png"
+              style={{ width: "150px", height: "auto" }} // Adjust the width as needed
+            />
+            <img
+              id="hrt"
+              src="images/hrt.png"
+              style={{ width: "150px", height: "auto" }} // Adjust the width as needed
+            />
+            <img
+              id="stripe"
+              src="images/stripe.png"
+              style={{ width: "150px", height: "auto" }} // Adjust the width as needed
+            />
           </div>
           <div class="gold-tier-label">Gold Tier</div>
           <div class="grid" id="logo-grid">
-            <img id="aptiv" src="images/aptiv.svg" />
-            <img id="bloomberg" src="images/bloomberg.svg" />
-            <img id="hrt" src="images/hrt.png" />
-            <img id="js" src="images/js.png" />
-            <img id="microsoft" src="images/microsoft.svg" />
-            <img id="meta" src="images/meta.png" />
+            <img
+              id="ford"
+              src="images/ford.png"
+              style={{ width: "150px", height: "auto" }}
+            />
+            <img
+              id="deshaw"
+              src="images/deshaw.png"
+              style={{ width: "150px", height: "auto" }}
+            />
+            <img
+              id="bnymellon"
+              src="images/bnymellon.jpeg"
+              style={{ width: "150px", height: "auto" }}
+            />
+            <img
+              id="janestreet"
+              src="images/janestreet.png"
+              style={{ width: "150px", height: "auto" }}
+            />
+            <img
+              id="sig"
+              src="images/sig.png"
+              style={{ width: "150px", height: "auto" }}
+            />
+            <img
+              id="lockheed"
+              src="images/lockheed.png"
+              style={{ width: "200px", height: "auto" }}
+            />
           </div>
           <div class="silver-tier-label">Silver Tier</div>
           <div class="grid" id="logo-grid">
-            <img id="omc" src="images/omc.png" />
-            <img id="sandia" src="images/sandia.svg" />
+            <img
+              id="sandia"
+              src="images/sandia.svg"
+              style={{ width: "150px", height: "auto" }}
+            />
           </div>
           <div class="bronze-tier-label">Bronze Tier</div>
           <div class="grid" id="logo-grid">
-            <img id="scm" src="images/scm.png" />
+            <img
+              id="scm"
+              src="images/scm.png"
+              style={{ width: "150px", height: "auto" }}
+            />
           </div>
         </div>
       </span>
