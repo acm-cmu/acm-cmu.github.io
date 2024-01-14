@@ -105,10 +105,12 @@ export default function Events() {
             <a href="https://www.acmatcmu.com/hackcmu/">
               <img id="hackcmu" src="images/hackcmu2023.png" />
             </a>
-            <a>Algorithms With a Purpose 2024 - Coming Soon!</a>
+            <a href="https://awap.acmatcmu.com">
+              <img id="awap" src="images/backdrop.png" />
+            </a>
             <a>HackBerry Pi 2024 - Coming Soon!</a>
           </div>
-          <div class="infotext">
+          {/* <div class="infotext">
             Check out photos from our previous events!
           </div>
           <Carousel>
@@ -118,7 +120,7 @@ export default function Events() {
      height="200"  alt={`Image ${index + 1}`} />
               </div>
             ))}
-          </Carousel>
+          </Carousel> */}
         </div>
       </span>
     </div>
