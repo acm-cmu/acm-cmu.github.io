@@ -7,25 +7,38 @@ export default function Layout({ children }) {
   const location = useLocation(); // Hook to detect route changes
   const [showContent, setShowContent] = useState(false);
   const [typewriterKey, setTypewriterKey] = useState(0); // Key to force rerender
+  const [typewriterText, setTypewriterText] = useState("");
+
+  // Add some spaces at the start, otherwise the typing effect "jumps" ahead
+  const routeTexts = {
+    "/welcome":   "    cat welcome.txt",
+    "/aboutus":   "      cat about.txt",
+    "/events":    "     cat events.txt",
+    "/sponsors":  "   cat sponsors.txt",
+  };
 
   useEffect(() => {
     // Reset content display on route change
     setShowContent(false);
-    
+
+    // Set the text for Typewriter based on the current route
+    const currentText = routeTexts[location.pathname] || "    cat welcome.txt"; // default text
+    setTypewriterText(currentText);
+
     // Change key to reset Typewriter component
     setTypewriterKey((prevKey) => prevKey + 1);
 
     const timer = setTimeout(() => {
       setShowContent(true); // Show content after typing animation
-    }, 2000); // Adjust the delay to match the typing duration
+    }, 1500); // Adjust the delay to match the typing duration
 
     return () => clearTimeout(timer);
-  }, [location]); // Effect runs on location change
+  }, [location]);
 
   return (
     <div>
       {/* Typewriter component will re-render with a new key on location change */}
-      <Typewriter key={typewriterKey} text="caat welcome.txt" delay={100} />
+      <Typewriter key={typewriterKey} text={typewriterText} delay={75} />
 
       <div id="navbar">
         <div id="bash">bash acm@cmu.org:~ $</div>
