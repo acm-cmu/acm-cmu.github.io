@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Typewriter from "./typewriter"; // Ensure this path is correct
-
 import "./layout.css";
+
 export default function Layout({ children }) {
   const location = useLocation(); // Hook to detect route changes
   const [showContent, setShowContent] = useState(false);
@@ -25,12 +25,10 @@ export default function Layout({ children }) {
   return (
     <div>
       {/* Typewriter component will re-render with a new key on location change */}
+      <Typewriter key={typewriterKey} text="caat welcome.txt" delay={100} />
 
-      <Typewriter key={typewriterKey} text="ccat welcome.txt" delay={100} />
-      
       <div id="navbar">
-        
-        <div id="bash">bash</div>
+        <div id="bash">bash acm@cmu.org:~ $</div>
         <input id="menu-btn" type="checkbox" />
         <label id="menu-icon" htmlFor="menu-btn">
           <span className="navicon"></span>
@@ -57,7 +55,6 @@ export default function Layout({ children }) {
             </Link>
           </li>
         </ul>
-        
       </div>
 
       {showContent && (
@@ -67,7 +64,7 @@ export default function Layout({ children }) {
       )}
 
       <script src="terminal.js" data-terminal-container></script>
-      
+
       <div id="footer">© 2024 ACM@CMU.</div>
     </div>
   );

@@ -7,10 +7,10 @@ const Typewriter = ({ text, delay }) => {
 
   useEffect(() => {
     setDisplayedText(""); // Reset text on rerender
-    let index = 0; 
+    let index = 0;
     const interval = setInterval(() => {
-      if (index + 1 < text.length) {
-        setDisplayedText((prev) => prev + text[index]); // Typewriter effect
+      if (index + 1< text.length) {
+        setDisplayedText((prev) => prev + text[index]);
         index++;
       } else {
         clearInterval(interval); // Clear interval when typing is complete
@@ -20,12 +20,7 @@ const Typewriter = ({ text, delay }) => {
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [text, delay]); // Re-run effect on text or delay change
 
-  return (
-    <div className="typewriter">
-      <span className="dynamic-text">{displayedText}</span>
-    </div>
-  );
-  
+  return <div className="typewriter">{displayedText}</div>;
 };
 
 export default Typewriter;
