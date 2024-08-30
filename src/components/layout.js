@@ -1,11 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./layout.css";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Typewriter from "./typewriter"; // Ensure this path is correct
 
+import "./layout.css";
 export default function Layout({ children }) {
+  const location = useLocation(); // Hook to detect route changes
+  const [showContent, setShowContent] = useState(false);
+  const [typewriterKey, setTypewriterKey] = useState(0); // Key to force rerender
+
+  useEffect(() => {
+    // Reset content display on route change
+    setShowContent(false);
+    
+    // Change key to reset Typewriter component
+    setTypewriterKey((prevKey) => prevKey + 1);
+
+    const timer = setTimeout(() => {
+      setShowContent(true); // Show content after typing animation
+    }, 2000); // Adjust the delay to match the typing duration
+
+    return () => clearTimeout(timer);
+  }, [location]); // Effect runs on location change
+
   return (
     <div>
+      {/* Typewriter component will re-render with a new key on location change */}
+
+      <Typewriter key={typewriterKey} text="ccat welcome.txt" delay={100} />
+      
       <div id="navbar">
+        
         <div id="bash">bash</div>
         <input id="menu-btn" type="checkbox" />
         <label id="menu-icon" htmlFor="menu-btn">
@@ -33,14 +57,18 @@ export default function Layout({ children }) {
             </Link>
           </li>
         </ul>
+        
       </div>
-      <div id="terminal" data-terminal>
-        {children}
-      </div>
+
+      {showContent && (
+        <div id="terminal" data-terminal>
+          {children}
+        </div>
+      )}
 
       <script src="terminal.js" data-terminal-container></script>
-
-      <div id="footer">© 2022 ACM@CMU.</div>
+      
+      <div id="footer">© 2024 ACM@CMU.</div>
     </div>
   );
 }

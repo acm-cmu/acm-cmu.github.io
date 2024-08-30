@@ -227,6 +227,13 @@
   width: 75%;
 }
 
+#static-text {
+  top: 60px; 
+  left: 20px;
+  color: white;
+  z-index: 1000;
+}
+
 #questions {
   padding-top: 30px;
 }
@@ -338,6 +345,8 @@ a:active {
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
+
+
 
 #logo-grid img {
   padding: 20px 30px;

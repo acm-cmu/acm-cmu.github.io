@@ -1,0 +1,36 @@
+/* typewriter.css */
+.typewriter {
+    position: absolute;
+    top: 60px; /* Adjusts vertical position */
+    left: 150px; /* Adjusts horizontal position */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    color: white; /* Sets the text color to white */
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1000; /* Ensures the text is above other elements */
+    border-right: 0.15em solid white; /* Cursor color changed to white */
+    animation: typing 0.5s steps(1, end), blink-caret 0.75s step-end infinite;
+  }
+
+
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: white; /* Cursor color changed to white */
+    }
+  }
+  
