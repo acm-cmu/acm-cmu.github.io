@@ -1,0 +1,67 @@
+.event-pink-title {
+    font-size: 30px;
+    color: hotpink;
+    margin-top: 5vh;
+  }
+  
+  
+  .event-name {
+    font-size: 20px;
+    padding-top: 2px;
+    word-wrap: break-word;
+  }
+
+  .event-item {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    display: flex;
+    background: #333333;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
+    animation: popupIn 0.3s ease-out;
+  }
+  
+  .popup-image {
+    width: 50%;
+    height: auto;
+  }
+  
+  .popup-text {
+    padding: 20px;
+    width: 50%;
+  }
+  
+  @keyframes popupIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

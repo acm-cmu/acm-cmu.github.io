@@ -1,12 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Typewriter from "./typewriter"; // Ensure this path is correct
 import "./layout.css";
 
 export default function Layout({ children }) {
+  const location = useLocation(); // Hook to detect route changes
+  const [showContent, setShowContent] = useState(false);
+  const [typewriterKey, setTypewriterKey] = useState(0); // Key to force rerender
+  const [typewriterText, setTypewriterText] = useState("");
+
+  // Add some spaces at the start, otherwise the typing effect "jumps" ahead
+  const routeTexts = {
+    "/welcome":   "    cat welcome.txt",
+    "/aboutus":   "      cat about.txt",
+    "/events":    "     cat events.txt",
+    "/sponsors":  "   cat sponsors.txt",
+  };
+
+  useEffect(() => {
+    // Reset content display on route change
+    setShowContent(false);
+
+    // Set the text for Typewriter based on the current route
+    const currentText = routeTexts[location.pathname] || "    cat welcome.txt"; // default text
+    setTypewriterText(currentText);
+
+    // Change key to reset Typewriter component
+    setTypewriterKey((prevKey) => prevKey + 1);
+
+    const timer = setTimeout(() => {
+      setShowContent(true); // Show content after typing animation
+    }, 1500); // Adjust the delay to match the typing duration
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
   return (
     <div>
+      {/* Typewriter component will re-render with a new key on location change */}
+      <Typewriter key={typewriterKey} text={typewriterText} delay={75} />
+
       <div id="navbar">
-        <div id="bash">bash</div>
+        <div id="bash">bash acm@cmu.org:~ $</div>
         <input id="menu-btn" type="checkbox" />
         <label id="menu-icon" htmlFor="menu-btn">
           <span className="navicon"></span>
@@ -34,13 +69,16 @@ export default function Layout({ children }) {
           </li>
         </ul>
       </div>
-      <div id="terminal" data-terminal>
-        {children}
-      </div>
+
+      {showContent && (
+        <div id="terminal" data-terminal>
+          {children}
+        </div>
+      )}
 
       <script src="terminal.js" data-terminal-container></script>
 
-      <div id="footer">© 2022 ACM@CMU.</div>
+      <div id="footer">© 2024 ACM@CMU.</div>
     </div>
   );
 }
