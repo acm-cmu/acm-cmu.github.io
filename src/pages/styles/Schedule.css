@@ -1,0 +1,129 @@
+.schedule-page {
+  color: white;
+  margin-bottom: 60px;
+}
+.schedule-page * {
+  overflow-x: visible !important;
+  position: relative;
+  z-index: 3;
+}
+.schedule-page .schedule-content {
+  height: 100%;
+  color: white;
+}
+.schedule-page .schedule-header {
+  height: 5vh;
+}
+.schedule-page .schedule-title {
+  font-family: "Montserrat", monospace;
+  font-weight: 600;
+  font-size: 5em;
+  color: whitesmoke;
+  padding-bottom: 15px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.legend-event {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 4px;
+}
+.legend-box {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+}
+.legend-label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.main-event2 {
+  background-color: #5392be;
+}
+.workshop {
+  background-color: #c0578e;
+}
+.foods {
+  background-color: #363a65;
+}
+
+.schedule-day-button {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.75rem;
+  font-weight: 900;
+  background: #52bdcd;
+  cursor: pointer;
+  color: white;
+  border: 0px solid white;
+  text-align: center;
+  margin: 20px;
+}
+#friday {
+  border: 3px solid white;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.schedule-event {
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px;
+  font-weight: 700;
+  min-height: 60px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+}
+.schedule-event .col p {
+  margin: 0px 8px;
+}
+.schedule-event .details {
+  color: blanchedalmond;
+}
+.schedule-event .col {
+  flex-basis: 40%;
+}
+.schedule-event .col:last-child {
+  flex-basis: 60%;
+  border-left: 3px solid white;
+}
+.schedule-header-word {
+  font-family: "Montserrat", monospace;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 460px) {
+  .schedule-page .schedule-title {
+    font-size: 4.5em;
+  }
+  .legend {
+    margin: auto !important;
+  }
+  .legend-event p {
+    font-size: 1em;
+  }
+  .schedule-event {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+  }
+}

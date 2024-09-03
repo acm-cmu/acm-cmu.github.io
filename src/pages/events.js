@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './events.css'; 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Link } from 'react-router-dom'; 
+
 
 // Popup component
 function Popup({ event, onClose }) {
@@ -61,11 +63,11 @@ export default function Events() {
         <div className="event-pink-title" id="header">Current Events</div>
         <div className="grid" id="events-grid">
         <div className="event-item">
-          <a href="https://www.acmatcmu.com/hackcmu/" target="_blank" rel="noopener noreferrer">
-            <img id="hackcmu" src="images/events/hackcmu2024.png" alt="HackCMU 2024" />
-            <p className="event-name">HackCMU 2024</p>
-          </a>
-        </div>
+            <Link to="/hackcmu">
+              <img id="hackcmu" src="images/events/hackcmu2024.png" alt="HackCMU 2024" />
+              <p className="event-name">HackCMU 2024</p>
+            </Link>
+          </div>
           <div className="event-item">
           <a href="https://awap.acmatcmu.com/" target="_blank" rel="noopener noreferrer">
             <img id="awap" src="images/backdrop.png" alt="AWAP" />

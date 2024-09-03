@@ -11,10 +11,10 @@ export default function Layout({ children }) {
 
   // Add some spaces at the start, otherwise the typing effect "jumps" ahead
   const routeTexts = {
-    "/welcome":   "    cat welcome.txt",
-    "/aboutus":   "      cat about.txt",
-    "/events":    "     cat events.txt",
-    "/sponsors":  "   cat sponsors.txt",
+    "/welcome": "    cat welcome.txt",
+    "/aboutus": "      cat about.txt",
+    "/events": "     cat events.txt",
+    "/sponsors": "   cat sponsors.txt",
   };
 
   useEffect(() => {
@@ -34,6 +34,13 @@ export default function Layout({ children }) {
 
     return () => clearTimeout(timer);
   }, [location]);
+
+  // Check if the current path is '/hackcmu' to conditionally render the layout
+  const isHackCMUPage = location.pathname === "/hackcmu";
+
+  if (isHackCMUPage) {
+    return <>{children}</>; // Render only children without the layout for the '/hackcmu' page
+  }
 
   return (
     <div>

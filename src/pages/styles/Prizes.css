@@ -1,0 +1,187 @@
+.prizes-page {
+  height: 100vh;
+  color: white;
+}
+.prizes-page * {
+  overflow-x: hidden !important;
+}
+.prizes-page .prizes-content {
+  height: 100%;
+}
+
+.prizes-page .prizes-header {
+  height: 5vh;
+}
+.prizes-page .prizes-title {
+  font-family: "Montserrat", monospace;
+  font-weight: 600;
+  font-size: 5em;
+  color: whitesmoke;
+}
+
+.prize-title {
+  margin-top: 2vh;
+  font-family: "Montserrat", monospace;
+  font-size: 5vh;
+  font-weight: 200;
+  color: whitesmoke;
+  margin-bottom: 1vh;
+}
+.prizes-page {
+  width: 100%;
+  height: auto;
+}
+.prizes-img-and-caption {
+  width: fit-content;
+  height: fit-content;
+  margin: 5vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prizes-img-and-caption2 {
+  /* width: fit-content;
+  height: fit-content; */
+  margin: 5vh auto;
+  display: flex;
+}
+@media only screen and (max-width: 900px) {
+  .prizes-img-and-caption {
+    flex-direction: row;
+  }
+}
+.prizes-caption {
+  width: 100vh;
+  text-align: center;
+}
+.prizes-caption-header {
+  text-align: center;
+}
+.prizes-para {
+  font-size: 1.5em;
+  border-width: 10px;
+  border-color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+}
+.prizes-caption-img-sep {
+  width: 10vh;
+  height: 8vh;
+}
+
+.prizes-list {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+  font-size: 1.5em;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+}
+.prizes-list li {
+  margin: 7px auto;
+}
+.prizes-list b {
+  color: #c04343;
+  font-weight: bolder;
+}
+
+.react-slideshow-container {
+  width: 80vh;
+  color: #cd2406;
+  background-size: contain;
+}
+.react-slideshow-container {
+  width: 100vh;
+  height: 80vh;
+  margin: auto;
+  background-color: #cd2406;
+  background-size: contain;
+  border: 13px solid #cd2406;
+  z-index: 10;
+  border-radius: 1.5em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.each-slide-effect > div {
+  display: fit;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.each-slide-effect span {
+  font-size: 1.3em;
+  font-weight: bold;
+  max-width: 40vh;
+  max-height: 10vh;
+  border-radius: 5%;
+  text-align: center;
+  background-size: contain;
+  position: absolute;
+  bottom: 0; /* Adjust this value if needed */
+  margin: 0 auto;
+  color: white;
+}
+.prizes-img-and-caption img {
+  max-width: 100%;
+  max-height: 100%;
+  background-size: center;
+}
+#prize-image {
+  height: 60vh;
+  width: 70vh;
+  border-radius: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  .prizes-page .prizes-title {
+    font-size: 4.5em;
+  }
+  .prizes-caption {
+    width: 80vw;
+    margin: auto;
+  }
+  .prizes-para {
+    font-size: 1.3em;
+  }
+  .prizes-list {
+    font-size: 1.3em;
+  }
+
+  .prizes-img-and-caption {
+    margin: 0vh auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .prizes-page .prizes-caption-header {
+    height: 5vh;
+  }
+  .react-slideshow-container {
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+  }
+  .each-slide-effect > div {
+    align-items: center;
+    background-size: cover;
+    border-radius: 10px;
+    width: 60vw;
+  }
+  .each-slide-effect span {
+    font-size: 1.2em;
+
+    /* margin-top: 50%; */
+  }
+}
+
+.slide {
+  height: 100%;
+  width: 600px;
+}

@@ -4,6 +4,8 @@ import About from "./pages/aboutus";
 import Events from "./pages/events";
 import Sponsors from "./pages/sponsors";
 import Layout from "./components/layout";
+import HackCMU from "./pages/hackcmu"; 
+
 
 function App() {
   return (
@@ -49,9 +51,16 @@ function App() {
             </Layout>
           }
         />
+        <Route
+          path="/hackcmu"
+          element={
+            <Layout>
+              <HackCMU />
+            </Layout>
+          }
+        />
       </Routes>
     </HashRouter>
   );
 }
-
 export default App;
