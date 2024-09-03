@@ -75,7 +75,7 @@ const Navbar = () => {
               width: "10%",
               zIndex: 10000,
             }}
-            href="acmatcmu.com"
+            href="https://www.acmatcmu.com/"
             target="_blank"
           >
             <img
