@@ -1,11 +1,10 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter, Navigate } from "react-router-dom";
 import Welcome from "./pages/welcome";
 import About from "./pages/aboutus";
 import Events from "./pages/events";
 import Sponsors from "./pages/sponsors";
 import Layout from "./components/layout";
-import HackCMU from "./pages/hackcmu"; 
-
+import HackCMU from "./pages/hackcmu";
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
           path="/"
           element={
             <Layout>
-              <Welcome />{" "}
+              <Welcome />
             </Layout>
           }
         />
@@ -59,8 +58,11 @@ function App() {
             </Layout>
           }
         />
+        {/* Catch-all route for undefined paths */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
   );
 }
+
 export default App;
