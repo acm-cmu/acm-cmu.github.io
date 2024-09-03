@@ -57,7 +57,7 @@ const FaqPage = () => {
         content: `You can learn more about us at <a href="http://acmatcmu.com" class="custom-link">acmatcmu.com</a>!`,
       },
       {
-        title: "Q: Any other questions, commentsor concerns?",
+        title: "Q: Any other questions, comments, or concerns?",
         content: `Email us at acm-exec@cs.cmu.edu. We'd also love for you to follow us on social media @acmatcmu, LinkedIn group, keep up with our website, and join our Discord server :)`,
       },
     ],
