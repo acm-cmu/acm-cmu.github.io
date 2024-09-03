@@ -4,7 +4,7 @@ import cyberpunk from '../images/2024cyberpunk1.png'
 
 const Homepage = () => { 
     return (  
-        <div className="home-page">
+        <div id="home-page" className="home-page">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.css"
             integrity="sha512-wCVOuVtxsXqrQK7tj9j4BvyfITQmpp7UE7mVilD7aieGLYFEIAa5UKTP1RapOf6dxQ9JIKAneakcyykWG4r4Ow=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />

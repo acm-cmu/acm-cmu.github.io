@@ -69,7 +69,7 @@ const FaqPage = () => {
     // tabFocus: true
   };
   return (
-    <div className="faq-page">
+    <div id="faq-page" className="faq-page">
       <div className="faq-header"></div>{" "}
       {/* used to line up the scroll correctly */}
       <div className="faq-title">FAQ</div>
