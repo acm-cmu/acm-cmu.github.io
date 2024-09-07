@@ -30,7 +30,7 @@ const FaqPage = () => {
       },
       {
         title: "Q: What do I do after I register?",
-        content: `Wait for a follow-up email with more details. Invite your friends! It'll be fun! Hacking is more exciting with a crew, here's the link to share: https://cmu.ca1.qualtrics.com/jfe/form/SV_2nrluKEiu0VOgLA`,
+        content: `Wait for a follow-up email with more details. Invite your friends! It'll be fun! Hacking is more exciting with a crew, here's the link to share: https://docs.google.com/forms/d/e/1FAIpQLSevS-JRXkp0jOwKZIhcYjlWa4HFXfzoSBbqc7lxhJ4o0WPKeQ/viewform`,
       },
       {
         title: "Q: I’m not a “hacker”, can I still participate?",

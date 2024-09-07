@@ -30,7 +30,7 @@ const fridaySchedule = () => {
         </div>
         <div class="col">
           <p>Dinner & Sponsor Fair</p>
-          <p class="details">Rashid Auditorium (GHC 4401)</p>
+          <p class="details">Across Rashid in the Glass Room</p>
           <p class="details">Meet our amazing event sponsors!</p>
         </div>
       </div>
@@ -48,6 +48,7 @@ const fridaySchedule = () => {
         </div>
         <div class="col">
           <p>Midnight Snack</p>
+          <p class="details">Gates La Prima (Gates 3rd floor)</p>
           <p class="details">Scavenger Hunt!</p>
         </div>
       </div>
@@ -60,11 +61,11 @@ const saturdaySchedule = () => {
     <div>
       <div class="schedule-event foods">
         <div class="col">
-          <p>8:00 - 10:00 AM</p>
+          <p>8:00 - 9:00 AM</p>
         </div>
         <div class="col">
           <p>Breakfast</p>
-          <p class="details">Rashid Auditorium (GHC 4401)</p>
+          <p class="details">Across Rashid in the Glass Room</p>
           <p class="details">Get breakfast after a long night of hacking!</p>
         </div>
       </div>
@@ -74,11 +75,12 @@ const saturdaySchedule = () => {
         </div>
         <div class="col">
           <p>Lunch</p>
+          <p class="details">Across Rashid in the Glass Room</p>
         </div>
       </div>
       <div class="schedule-event main-event2">
         <div class="col">
-          <p>3:00 PM</p>
+          <p>1:00 PM</p>
         </div>
         <div class="col">
           <p>Project Submission Deadline</p>
@@ -88,18 +90,20 @@ const saturdaySchedule = () => {
       </div>
       <div class="schedule-event main-event2">
         <div class="col">
-          <p>4:00 - 4:30 PM</p>
+          <p>2:00 - 3:30 PM</p>
         </div>
         <div class="col">
           <p>Judging</p>
+          <p class="details">Rango Ballroom (CUC 2nd floor)</p>
         </div>
       </div>
       <div class="schedule-event main-event2">
         <div class="col">
-          <p>4:30 - 5:00 PM</p>
+          <p>3:30 - 4:30 PM</p>
         </div>
         <div class="col">
           <p>Expo</p>
+          <p class="details">Rango Ballroom (CUC 2nd floor)</p>
         </div>
       </div>
       <div class="schedule-event main-event2">
@@ -108,6 +112,7 @@ const saturdaySchedule = () => {
         </div>
         <div class="col">
           <p>Closing Ceremony</p>
+          <p class="details">Rashid Auditorium (GHC 4401)</p>
           <p class="details">We hope you continue to reach for the stars after our event :)</p>
         </div>
       </div>
