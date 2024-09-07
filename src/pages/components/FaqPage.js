@@ -9,6 +9,10 @@ const FaqPage = () => {
         content: `HackCMU is a 24-hour event where students from across campus come together to make something awesome — like an app, website or hardware hack.`,
       },
       {
+        title: "Q: How do I register?",
+        content: `You can register through the link here: https://docs.google.com/forms/d/e/1FAIpQLSevS-JRXkp0jOwKZIhcYjlWa4HFXfzoSBbqc7lxhJ4o0WPKeQ/viewform`,
+      },
+      {
         title: "Q: What is this year's theme?",
         content: `This year's theme is "Cyberpunk"!`,
       },
