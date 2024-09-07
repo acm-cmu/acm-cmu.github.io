@@ -1,5 +1,5 @@
 # Links
-ACM@CMU main website: https://www.acmatcmu.com/
+ACM@CMU main website: https://www.acmatcmu.com/              
 HackCMU 2024 website: https://www.acmatcmu.com/#/hackcmu
 
 # Getting Started with Create React App
