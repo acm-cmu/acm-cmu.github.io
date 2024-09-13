@@ -34,14 +34,6 @@ const fridaySchedule = () => {
           <p class="details">Meet our amazing event sponsors!</p>
         </div>
       </div>
-      <div class="schedule-event workshop">
-        <div class="col">
-          <p>9:00 - 9:30 PM</p>
-        </div>
-        <div class="col">
-          <p>Meet the ACM@CMU Organizing Team</p>
-        </div>
-      </div>
       <div class="schedule-event foods">
         <div class="col">
           <p>12:00 - 1:00 AM</p>
