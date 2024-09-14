@@ -53,7 +53,7 @@ const saturdaySchedule = () => {
     <div>
       <div class="schedule-event foods">
         <div class="col">
-          <p>8:00 - 9:00 AM</p>
+          <p>9:00 - 10:00 AM</p>
         </div>
         <div class="col">
           <p>Breakfast</p>
