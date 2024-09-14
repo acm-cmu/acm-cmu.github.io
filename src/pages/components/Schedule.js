@@ -76,8 +76,8 @@ const saturdaySchedule = () => {
         </div>
         <div class="col">
           <p>Project Submission Deadline</p>
-          <p class="details">Devpost</p>
-          <p class="details">Submit your project by 1:00 PM on Devpost</p>
+          <p class="details">Google Forms</p>
+          <p class="details">Submit your project description and track selection by 1:00 PM</p>
         </div>
       </div>
       <div class="schedule-event main-event2">
