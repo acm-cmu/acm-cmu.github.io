@@ -76,7 +76,12 @@ const saturdaySchedule = () => {
         </div>
         <div class="col">
           <p>Project Submission Deadline</p>
-          <p class="details">Google Forms</p>
+          <p className="details">
+  Submit here via <a href="https://forms.gle/5tfHQCSTo2GK4rSTA"> <span style={{ color: 'yellow' }}>Google Forms</span> </a> (required)
+</p>
+        <p class="details">
+          You can also submit your project on<a href="https://hackcmu-2023.devpost.com/"> <span style={{ color: 'yellow' }}>Devpost</span> </a>(optional) 
+        </p>
           <p class="details">Submit your project description and track selection by 1:00 PM</p>
         </div>
       </div>
@@ -104,7 +109,7 @@ const saturdaySchedule = () => {
         </div>
         <div class="col">
           <p>Closing Ceremony</p>
-          <p class="details">Rashid Auditorium (GHC 4401)</p>
+          <p class="details">Rangos Ballroom (CUC 2nd floor)</p>
           <p class="details">We hope you continue to reach for the stars after our event :)</p>
         </div>
       </div>
