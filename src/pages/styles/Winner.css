@@ -1,0 +1,84 @@
+.special-prizes-container .grand-prize {
+    font-size: 2rem; /* Increase the size of the prize and team name */
+    color: hotpink; /* Set the color to hotpink */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.grand-prize-members {
+    font-size: 1.8rem; /* Increase the size of team member names */
+    color: white;
+    margin-bottom: 15px;
+}
+
+.winner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+
+.winner-title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    margin: 20px 0;
+}
+
+.track-container {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 80%;
+    color: hotpink;
+    font-size: 1.5rem;
+}
+
+.team {
+    margin: 10px 0;
+}
+
+.team h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.team-members {
+    list-style-type: none;
+    padding: 0;
+}
+
+.team-members li {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.special-prizes {
+    margin: 40px 0;
+}
+
+.special-prizes h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.special-prizes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.special-prizes ul li {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+iframe {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
