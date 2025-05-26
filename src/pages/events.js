@@ -4,6 +4,24 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Link } from 'react-router-dom'; 
 
+// Helper component for responsive images
+function ResponsiveImage({ src, alt, className }) {
+  const webpSrc = src.replace(/\.png$/, '.webp');
+  const handleError = (e) => {
+    // Fallback to original PNG if WebP fails to load
+    if (e.target.src.endsWith('.webp')) {
+      e.target.src = src;
+    }
+  };
+
+  return (
+    <picture>
+      <source srcSet={webpSrc} type="image/webp" onError={handleError} />
+      <source srcSet={src} type="image/png" />
+      <img src={src} alt={alt} className={className} onError={handleError} />
+    </picture>
+  );
+}
 
 // Popup component
 function Popup({ event, onClose }) {
@@ -12,7 +30,7 @@ function Popup({ event, onClose }) {
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        <img src={event.imagePopup} alt={event.name} className="popup-image" />
+        <ResponsiveImage src={event.imagePopup} alt={event.name} className="popup-image" />
         <div className="popup-text">
           <h2>{event.name}</h2>
           <p>{event.description}</p>
@@ -62,34 +80,32 @@ export default function Events() {
         </div>
         <div className="event-pink-title" id="header">Current Events</div>
         <div className="grid" id="events-grid">
-        
-        <div className="event-item">
+          <div className="event-item">
             <p className="event-name">HackCMU 2025 - Coming Soon!</p>
-        </div>
+          </div>
 
-        <div className="event-item">
+          <div className="event-item">
             <p className="event-name">AWAP 2026 - Coming Soon!</p>
-        </div>
-
+          </div>
         </div>
         <div className="plat-tier-label" id="header">Past Events</div>
 
         <div className="grid" id="events-grid">
           <div className="event-item">
             <Link to="/hackcmu">
-              <img id="hackcmu" src="images/events/hackcmu2024.png" alt="HackCMU 2024" />
+              <ResponsiveImage src="images/events/hackcmu2024.png" alt="HackCMU 2024" className="" />
               <p className="event-name">HackCMU 2024</p>
             </Link>
           </div>
-        <div className="event-item">
-          <a href="https://awap.acmatcmu.com/" target="_blank" rel="noopener noreferrer">
-            <img id="awap" src="images/backdrop.png" alt="AWAP" />
-            <p className="event-name">AWAP 2024</p>
-          </a>
+          <div className="event-item">
+            <a href="https://awap.acmatcmu.com/" target="_blank" rel="noopener noreferrer">
+              <ResponsiveImage src="images/events/awap2024.png" alt="AWAP 2024" className="" />
+              <p className="event-name">AWAP 2024 - Raid CMU Legends</p>
+            </a>
           </div>
           {events.map((event, index) => (
             <div className="event-item" key={index} onClick={() => handleEventClick(event)}>
-              <img id="event-image" src={event.imagePage} alt={event.name} />
+              <ResponsiveImage src={event.imagePage} alt={event.name} className="" />
               <p className="event-name">{event.name}</p>
             </div>
           ))}

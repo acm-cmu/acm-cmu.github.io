@@ -9,8 +9,6 @@ export default function Sponsors() {
           <div className="title" id="header">
             Sponsors
           </div>
-
-          
           <div className="infotext">
             Our work here at ACM@CMU would simply not be possible without the
             help of our amazing sponsors. We are immeasurably thankful for our
