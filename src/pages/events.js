@@ -62,24 +62,31 @@ export default function Events() {
         </div>
         <div className="event-pink-title" id="header">Current Events</div>
         <div className="grid" id="events-grid">
+        
         <div className="event-item">
+            <p className="event-name">HackCMU 2025 - Coming Soon!</p>
+        </div>
+
+        <div className="event-item">
+            <p className="event-name">AWAP 2026 - Coming Soon!</p>
+        </div>
+
+        </div>
+        <div className="plat-tier-label" id="header">Past Events</div>
+
+        <div className="grid" id="events-grid">
+          <div className="event-item">
             <Link to="/hackcmu">
               <img id="hackcmu" src="images/events/hackcmu2024.png" alt="HackCMU 2024" />
               <p className="event-name">HackCMU 2024</p>
             </Link>
           </div>
-          <div className="event-item">
+        <div className="event-item">
           <a href="https://awap.acmatcmu.com/" target="_blank" rel="noopener noreferrer">
             <img id="awap" src="images/backdrop.png" alt="AWAP" />
             <p className="event-name">AWAP 2024</p>
           </a>
           </div>
-          <div className="event-item">
-            <p className="event-name">HackBerry Pi 2024 - Coming Soon!</p>
-          </div>
-        </div>
-        <div className="plat-tier-label" id="header">Past Events</div>
-        <div className="grid" id="events-grid">
           {events.map((event, index) => (
             <div className="event-item" key={index} onClick={() => handleEventClick(event)}>
               <img id="event-image" src={event.imagePage} alt={event.name} />
