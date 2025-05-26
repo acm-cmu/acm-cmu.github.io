@@ -18,7 +18,7 @@ function ResponsiveImage({ src, alt, className }) {
     <picture>
       <source srcSet={webpSrc} type="image/webp" onError={handleError} />
       <source srcSet={src} type="image/png" />
-      <img src={src} alt={alt} className={className} onError={handleError} />
+      <img src={src} alt={alt} className={className}  loading="lazy"  onError={handleError} />
     </picture>
   );
 }
