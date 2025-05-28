@@ -23,36 +23,47 @@
   }
   
   .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .popup-content {
-    display: flex;
-    background: #333333;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 80%;
-    max-width: 900px;
-    animation: popupIn 0.3s ease-out;
-  }
-  
-  .popup-image {
-    width: 50%;
-    height: auto;
-  }
-  
-  .popup-text {
-    padding: 20px;
-    width: 50%;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  display: flex;
+  background: #333333;
+  border-radius: 8px;
+  overflow: hidden;
+  width: auto;
+  /* fix the popup height */
+  height: 400px;           /* whatever fixed height you want */
+  max-width: 80vw;
+  animation: popupIn 0.3s ease-out;
+}
+
+.popup-image {
+  display: block;
+  /* fill the container height */
+  height: 100%;
+  /* auto width to preserve aspect ratio */
+  width: auto;
+  /* ensure it doesn’t overflow width-wise */
+  max-width: 100%;
+}
+
+.popup-text {
+  padding: 20px;
+  /* allow text to scroll if it’s taller than the popup */
+  overflow-y: auto;
+  width: 300px;            /* or whatever width you like for text */
+}
+
+
   
   @keyframes popupIn {
     from {
