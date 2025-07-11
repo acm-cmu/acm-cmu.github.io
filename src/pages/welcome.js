@@ -14,7 +14,7 @@ export default function Welcome() {
             professionals. We are dedicated to promoting interdisciplinary
             computing and enabling professional development on campus.
           </div>
-          <a dest="#learn-more" class="scroll-button" id="learn-more-button">
+          <a href="https://www.acmatcmu.com/#/events" class="scroll-button" id="learn-more-button">
             Learn more.
           </a>
         </div>
