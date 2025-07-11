@@ -6,22 +6,24 @@ import { Link } from 'react-router-dom';
 
 // Helper component for responsive images
 function ResponsiveImage({ src, alt, className }) {
-  const webpSrc = src.replace(/\.png$/, '.webp');
+  const publicSrc = `${process.env.PUBLIC_URL}/${src}`;
+  const webpSrc = publicSrc.replace(/\.png$/, '.webp');
+
   const handleError = (e) => {
-    // Fallback to original PNG if WebP fails to load
     if (e.target.src.endsWith('.webp')) {
-      e.target.src = src;
+      e.target.src = publicSrc;
     }
   };
 
   return (
     <picture>
       <source srcSet={webpSrc} type="image/webp" onError={handleError} />
-      <source srcSet={src} type="image/png" />
-      <img src={src} alt={alt} className={className}  loading="lazy"  onError={handleError} />
+      <source srcSet={publicSrc} type="image/png" />
+      <img src={publicSrc} alt={alt} className={className} loading="lazy" onError={handleError} />
     </picture>
   );
 }
+
 
 // Popup component
 function Popup({ event, onClose }) {
@@ -44,10 +46,11 @@ export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const events = [
-    { name: 'HackCMU 2023', imagePage: 'images/events/hackcmu2023.png', imagePopup: "images/events/hackcmu2023-popup.png", description: 'HackCMU 2023 was held on September 15-16, bringing together students, innovators, and tech enthusiasts for a weekend of collaborative coding and creativity. Participants engage in a fast-paced, 24-hour challenge to build innovative solutions, with access to workshops, mentorship, and a diverse array of tools and technologies.' },
+   
     { name: 'AWAP 2023 - Mars Makeover', imagePage: 'images/events/awap2023.png',  imagePopup: "images/events/awap2023-popup.png", description: 'Mars Makeover was our largest event yet, where teams competed to use their fleet of explorer robots to explore the planet, collect resources from metal deposits using miner robots to then expand their fleet, and terraform land tiles to take over the planet. Algorithms had to control the varying metal resources, robot collisions, and costs to transform.' },
-    { name: 'HackCMU 2022', imagePage: 'images/events/hackcmu2022.png', imagePopup: "images/events/hackcmu2022-popup.png", description: 'HackCMU 2022 took place September 16–17, 2022 at CMU’s Gates Hillman Centers, bringing together students of all skill levels for a 24-hour hackathon under the theme “Gamification.” Experienced hackers were invited to mentor teams, lead sessions, and connect with sponsors, enjoying special swag and networking gifts in return.' },
+    { name: 'HackCMU 2023', imagePage: 'images/events/hackcmu2023.png', imagePopup: "images/events/hackcmu2023-popup.png", description: 'HackCMU 2023 was held on September 15-16, bringing together students, innovators, and tech enthusiasts for a weekend of collaborative coding and creativity. Participants engage in a fast-paced, 24-hour challenge to build innovative solutions, with access to workshops, mentorship, and a diverse array of tools and technologies.' },
     { name: 'AWAP 2022 - WiFi Rumble', imagePage: 'images/events/awap2022.png',  imagePopup: "images/events/awap2022-popup.png", description: 'In Wifi Rumble, students acted as internet service providers to establish cell towers across the impoverished and desolate land of Ohhiyo. Players vied for power by building roads and cell towers near high populations as quickly as possible. Algorithms had to contend with terrain of varying building cost and clever opponents who might fence them in.' },
+    { name: 'HackCMU 2022', imagePage: 'images/events/hackcmu2022.png', imagePopup: "images/events/hackcmu2022-popup.png", description: 'HackCMU 2022 took place September 16–17, 2022 at CMU’s Gates Hillman Centers, bringing together students of all skill levels for a 24-hour hackathon under the theme “Gamification.” Experienced hackers were invited to mentor teams, lead sessions, and connect with sponsors, enjoying special swag and networking gifts in return.' },
     { name: 'HackberryPi 2022', imagePage: 'images/events/hackberrypi2022.png', imagePopup: "images/events/hackberrypi2022-popup.png", description: 'In celebration of Pi Day, teams of up to four were given a Pi and accessories on kickoff day, then had one week to build and demo creative hardware or connectivity projects. With five non-cash prizes—ranging from Best Hardware Hack to Most Practical—participants of all experience levels came together to learn, experiment, and showcase their IoT creations.' },
     { name: 'HackCMU 2021', imagePage: 'images/events/hackcmu2021.png', imagePopup: "images/events/hackcmu2021-popup.png", description: 'HackCMU 2021 was a two-day, in-person hackathon held October 1–2 at CMU’s Rashid Auditorium, exclusively for CMU undergraduates. Over 130 participants teamed up to build open-ended projects, guided by tech talks and tutorials, and submitted 90-second demo videos. With $2,100 in total prizes, including special challenges sponsors, competitors showcased creativity, technical skill, and practical impact.' },
     { name: 'AWAP 2021 - Commute Chaos', imagePage: 'images/events/awap2021.png',  imagePopup: "images/events/awap2021-popup.png", description: 'In 2021, AWAP was hosted virtually due to COVID, with a theme based on effective transportation management. Each team operated as a Transportation Manager whose role was to design a subway network. Given knowledge on the passenger load of different stations, teams tackled the optimization problem of constructing routes across stations with limited resources in order to minimize travel time for a simulated day of commuting.' },
@@ -81,7 +84,11 @@ export default function Events() {
         <div className="event-pink-title" id="header">Current Events</div>
         <div className="grid" id="events-grid">
           <div className="event-item">
-            <p className="event-name">HackCMU 2025 - Coming Soon!</p>
+            <a href="https://acmatcmu/hackcmu2025" target="_blank" rel="noopener noreferrer">
+              <ResponsiveImage src="images/events/hackcmu2025.png" alt="HackCMU 2025" className="" />
+              <p className="event-name">HackCMU 2025</p>
+              <p className="event-name">September 12 - 13</p>
+            </a>
           </div>
 
           <div className="event-item">
@@ -92,16 +99,16 @@ export default function Events() {
 
         <div className="grid" id="events-grid">
           <div className="event-item">
-            <Link to="/hackcmu">
-              <ResponsiveImage src="images/events/hackcmu2024.png" alt="HackCMU 2024" className="" />
-              <p className="event-name">HackCMU 2024</p>
-            </Link>
-          </div>
-          <div className="event-item">
             <a href="https://awap.acmatcmu.com/" target="_blank" rel="noopener noreferrer">
               <ResponsiveImage src="images/events/awap2024.png" alt="AWAP 2024" className="" />
               <p className="event-name">AWAP 2024 - Raid CMU Legends</p>
             </a>
+          </div>
+          <div className="event-item">
+            <Link to="/hackcmu">
+              <ResponsiveImage src="images/events/hackcmu2024.png" alt="HackCMU 2024" className="" />
+              <p className="event-name">HackCMU 2024</p>
+            </Link>
           </div>
           {events.map((event, index) => (
             <div className="event-item" key={index} onClick={() => handleEventClick(event)}>
