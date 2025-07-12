@@ -12,3 +12,16 @@
 .white-bg {
   background-color: white;
 }
+
+#logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px; /* more spacing between logos */
+  margin-top: 40px;
+}
+
+#logo-grid .event-item img {
+  max-width: 220px; /* increase logo size */
+  height: auto;
+}
