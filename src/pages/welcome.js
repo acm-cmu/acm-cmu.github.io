@@ -1,13 +1,24 @@
 import React from "react";
+import DecryptedText from "./DecryptedText";
 
 export default function Welcome() {
   return (
     <div class="welcome">
       <span class="text">
         <div class="container">
-          <div class="title" id="welcometext">
+          {/* <div class="title" id="welcometext">
             ACM@CMU
-          </div>
+          </div> */}
+          <DecryptedText
+            text="ACM@CMU"
+            speed={60}
+            maxIterations={15}
+            sequential={true}
+            revealDirection="start"
+            animateOn="hover"
+            className="title"
+            id = "welcometext"
+          />
           <div class="infotext">
             ACM@CMU is Carnegie Mellon's student chapter of the Association for
             Computing Machinery, the leading premier organization for computing
