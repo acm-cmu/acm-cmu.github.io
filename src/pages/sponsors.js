@@ -3,15 +3,22 @@ import "./sponsors.css";
 
 function ResponsiveImage({ src, alt, className, style }) {
   const publicSrc = `${process.env.PUBLIC_URL}/${src}`;
+  const webpSrc = publicSrc.replace(/\.webp$/, '.webp').replace(/\.png$/, '.webp');
+
+  const handleError = (e) => {
+    if (e.target.src.endsWith('.webp')) {
+      e.target.src = publicSrc;
+    }
+  };
 
   return (
     <picture>
-      <source srcSet={publicSrc} type="image/webp" />
-      <img src={publicSrc} alt={alt} className={className} style={style} loading="lazy" />
+      <source srcSet={webpSrc} type="image/webp" onError={handleError} />
+      <source srcSet={publicSrc} type="image/svg+xml" />
+      <img src={publicSrc} alt={alt} className={className} style={style} loading="lazy" onError={handleError} />
     </picture>
   );
 }
-
 
 export default function Sponsors() {
   return (
