@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sponsors.css";
 import { Link } from 'react-router-dom';
 
@@ -22,114 +22,64 @@ function ResponsiveImage({ src, alt, className }) {
   );
 }
 
-// Popup component for sponsor
-function Popup({ sponsor, onClose }) {
-  if (!sponsor) return null;
-
-  return (
-    <div className="popup-overlay" onClick={onClose}>
-      <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        <ResponsiveImage src={sponsor.imagePopup} alt={sponsor.name} className="popup-image" />
-        <div className="popup-text">
-          <h2>{sponsor.name}</h2>
-          <p>{sponsor.description}</p>
-          <a href={sponsor.link} target="_blank" rel="noopener noreferrer">Visit Website</a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Sponsors() {
-  const [selectedSponsor, setSelectedSponsor] = useState(null);
-
   const sponsors = [
     {
       name: "Citadel",
       imagePage: "images/sponsors/citadel.png",
-      imagePopup: "images/sponsors/citadel.png",
-      description: "A leading global financial institution.",
       link: "https://www.citadel.com"
     },
     {
       name: "The Trade Desk",
       imagePage: "images/sponsors/thetradedesk.png",
-      imagePopup: "images/sponsors/thetradedesk.png",
-      description: "World-class digital advertising platform.",
       link: "https://www.thetradedesk.com/us"
     },
     {
       name: "HRT",
       imagePage: "images/sponsors/hrt.png",
-      imagePopup: "images/sponsors/hrt.png",
-      description: "Hudson River Trading, quantitative trading firm.",
       link: "https://www.hudsonrivertrading.com/"
     },
     {
       name: "Stripe",
       imagePage: "images/sponsors/stripe.png",
-      imagePopup: "images/sponsors/stripe.png",
-      description: "Online payment processing for internet businesses.",
       link: "https://stripe.com"
     },
     {
       name: "D. E. Shaw",
       imagePage: "images/sponsors/deshaw.png",
-      imagePopup: "images/sponsors/deshaw.png",
-      description: "A global investment and technology development firm.",
       link: "https://www.deshaw.com"
     },
     {
       name: "Jane Street",
       imagePage: "images/sponsors/janestreet.png",
-      imagePopup: "images/sponsors/janestreet.png",
-      description: "Global trading firm.",
       link: "https://www.janestreet.com"
     },
     {
       name: "Lockheed Martin",
       imagePage: "images/sponsors/lockheed.png",
-      imagePopup: "images/sponsors/lockheed.png",
-      description: "Aerospace and defense company.",
       link: "https://www.lockheedmartin.com"
     },
     {
       name: "Anthropic",
       imagePage: "images/sponsors/anthropic.png",
-      imagePopup: "images/sponsors/anthropic.png",
-      description: "AI safety and research company.",
       link: "https://www.anthropic.com"
     },
     {
       name: "Ethereum",
       imagePage: "images/sponsors/ethereum.png",
-      imagePopup: "images/sponsors/ethereum.png",
-      description: "Open-source blockchain with smart contract functionality.",
       link: "https://ethereum.org"
     },
     {
       name: "Sandia",
-      imagePage: "images/sponsors/sandia.svg",
-      imagePopup: "images/sponsors/sandia.svg",
-      description: "National security laboratory.",
+      imagePage: "images/sponsors/sandia.png",
       link: "https://www.sandia.gov"
     },
     {
       name: "SCM",
       imagePage: "images/sponsors/scm.png",
-      imagePopup: "images/sponsors/scm.png",
-      description: "Systematic Capital Management.",
       link: "https://www.scm-lp.com/"
     },
   ];
-
-  const handleSponsorClick = (sponsor) => {
-    setSelectedSponsor(sponsor);
-  };
-
-  const handleClosePopup = () => {
-    setSelectedSponsor(null);
-  };
 
   return (
     <div id="sponsors">
@@ -145,13 +95,17 @@ export default function Sponsors() {
 
         <div className="grid" id="logo-grid">
           {sponsors.map((sponsor, index) => (
-            <div className="event-item" key={index} onClick={() => handleSponsorClick(sponsor)}>
+            <a
+              key={index}
+              href={sponsor.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sponsor-link"
+            >
               <ResponsiveImage src={sponsor.imagePage} alt={sponsor.name} className="" />
-              <p className="event-name">{sponsor.name}</p>
-            </div>
+            </a>
           ))}
         </div>
-        {selectedSponsor && <Popup sponsor={selectedSponsor} onClose={handleClosePopup} />}
       </div>
     </div>
   );
