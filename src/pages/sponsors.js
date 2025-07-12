@@ -109,8 +109,8 @@ export default function Sponsors() {
     },
     {
       name: "Sandia",
-      imagePage: "images/sponsors/sandia.svg",
-      imagePopup: "images/sponsors/sandia.svg",
+      imagePage: "images/sponsors/sandia.png",
+      imagePopup: "images/sponsors/sandia.png",
       description: "National security laboratory.",
       link: "https://www.sandia.gov"
     },
