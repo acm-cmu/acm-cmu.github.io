@@ -55,7 +55,7 @@ export default function Layout({ children }) {
         </label>
         <ul id="navigation">
           <li>
-            <Link to="https://www.acmatcmu.com/hackcmu2025/" id="aboutus">
+            <Link to="https://www.acmatcmu.com/hackcmu2025/">
               HackCMU_2025
             </Link>
           </li>
