@@ -146,10 +146,18 @@ export default function Sponsors() {
         <div className="grid" id="logo-grid">
           {sponsors.map((sponsor, index) => (
             <div className="event-item" key={index}>
-              <ResponsiveImage src={sponsor.imagePage} alt={sponsor.name} className="" />
+              <a
+                href={sponsor.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sponsor-link"
+              >
+                <ResponsiveImage src={sponsor.imagePage} alt={sponsor.name} className="" />
+              </a>
             </div>
           ))}
         </div>
+
         {selectedSponsor && <Popup sponsor={selectedSponsor} onClose={handleClosePopup} />}
       </div>
     </div>
