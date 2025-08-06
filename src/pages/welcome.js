@@ -22,7 +22,8 @@ export default function Welcome() {
           <div class="infotext">
             ACM@CMU is Carnegie Mellon's student chapter of the Association for
             Computing Machinery, the leading premier organization for computing
-            professionals. We are dedicated to promoting interdisciplinary
+            professionals. As the largest student organization in the School of Computer Science (SCS),
+            we are dedicated to promoting interdisciplinary
             computing and enabling professional development on campus.
           </div>
           <a href="https://www.acmatcmu.com/#/events" class="scroll-button" id="learn-more-button">

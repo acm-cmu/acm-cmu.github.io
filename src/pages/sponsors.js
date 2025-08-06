@@ -97,29 +97,36 @@ export default function Sponsors() {
       name: "Anthropic",
       imagePage: "images/sponsors/anthropic.png",
       imagePopup: "images/sponsors/anthropic.png",
-      description: "AI safety and research company.",
+      description: "Anthropic",
       link: "https://www.anthropic.com"
     },
     {
       name: "Ethereum",
       imagePage: "images/sponsors/ethereum.png",
       imagePopup: "images/sponsors/ethereum.png",
-      description: "Open-source blockchain with smart contract functionality.",
+      description: "Ethereum",
       link: "https://ethereum.org"
     },
     {
       name: "Sandia",
       imagePage: "images/sponsors/sandia.png",
       imagePopup: "images/sponsors/sandia.png",
-      description: "National security laboratory.",
+      description: "Sandia National Laboratories.",
       link: "https://www.sandia.gov"
     },
     {
       name: "SCM",
       imagePage: "images/sponsors/scm.png",
       imagePopup: "images/sponsors/scm.png",
-      description: "Systematic Capital Management.",
+      description: "Steven's Capital Management.",
       link: "https://www.scm-lp.com/"
+    },
+    {
+      name: "Jump Trading",
+      imagePage: "images/sponsors/jump.png",
+      imagePopup: "images/sponsors/jump.png",
+      description: "Jump Trading",
+      link: "https://www.jumptrading.com/"
     },
   ];
 
@@ -146,7 +153,9 @@ export default function Sponsors() {
         <div className="grid" id="logo-grid">
           {sponsors.map((sponsor, index) => (
             <div className="event-item" key={index}>
-              <ResponsiveImage src={sponsor.imagePage} alt={sponsor.name} className="" />
+              <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
+                <ResponsiveImage src={sponsor.imagePage} alt={sponsor.name} className="" />
+              </a>
             </div>
           ))}
         </div>
