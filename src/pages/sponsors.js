@@ -128,6 +128,20 @@ export default function Sponsors() {
       description: "Jump Trading",
       link: "https://www.jumptrading.com/"
     },
+    {
+      name: "Y Combinator",
+      imagePage: "images/sponsors/YC.png",
+      imagePopup: "images/sponsors/YC.png",
+      description: "Y Combinator",
+      link: "https://www.ycombinator.com/"
+    },
+    {
+      name: "Bloomberg",
+      imagePage: "images/sponsors/bloomberg.png",
+      imagePopup: "images/sponsors/bloomberg.png",
+      description: "Bloomberg",
+      link: "https://www.bloomberg.com/"
+    },
   ];
 
   const handleSponsorClick = (sponsor) => {

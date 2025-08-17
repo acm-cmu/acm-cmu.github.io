@@ -31,7 +31,7 @@ const Team = () => {
                     data-src={aarav} alt="Aarav Bajaj" width="10%" /></a>
                 <a href="https://www.linkedin.com/in/alexis-duong/"><img src={alexis}
                     data-src={alexis} alt="Alexis Doung" width="10%" /></a>
-                <a href="https://www.linkedin.com/in/zanzaochen/"><img src={jackson}
+                <a href="https://www.linkedin.com/in/jacksoncmu/"><img src={jackson}
                     data-src={jackson} alt="Jackson Chen" width="10%" /></a>
                 <a href="https://www.linkedin.com/in/kt-g/"><img src={katie}
                     data-src={katie} alt="Katie Guo" width="10%" /></a>

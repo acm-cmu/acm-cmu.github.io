@@ -6,7 +6,7 @@ const profiles_current = [
     name: "Jackson Chen",
     title: "President",
     image: "headshots/jackson.jpg",
-    linkedin: "https://www.linkedin.com/in/zanzaoc/",
+    linkedin: "https://www.linkedin.com/in/jacksoncmu/",
   },
   {
     id: "tsaxena",
