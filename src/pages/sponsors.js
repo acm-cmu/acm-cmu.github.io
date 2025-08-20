@@ -142,6 +142,13 @@ export default function Sponsors() {
       description: "Bloomberg",
       link: "https://www.bloomberg.com/"
     },
+    {
+      name: "Roblox",
+      imagePage: "images/sponsors/roblox.png",
+      imagePopup: "images/sponsors/roblox.png",
+      description: "Roblox",
+      link: "https://corp.roblox.com/"
+    }
   ];
 
   const handleSponsorClick = (sponsor) => {
