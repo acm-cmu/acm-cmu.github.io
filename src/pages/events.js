@@ -83,7 +83,7 @@ export default function Events() {
         <div className="event-pink-title" id="header">Current Events</div>
         <div className="grid" id="events-grid">
           <div className="event-item">
-            <a href="https://acmatcmu/hackcmu2025" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.acmatcmu.com/hackcmu2025/" target="_blank" rel="noopener noreferrer">
               <ResponsiveImage src="images/events/hackcmu2025.png" alt="HackCMU 2025" className="" />
               <p className="event-name">HackCMU 2025</p>
               <p className="event-name">September 12 - 13</p>
