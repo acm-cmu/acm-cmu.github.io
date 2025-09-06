@@ -63,7 +63,71 @@
   width: 300px;            /* or whatever width you like for text */
 }
 
+.popup-slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  background: #222;
+  width: 600px;
+  position: relative;
+}
 
+.popup-arrow {
+  background: rgba(255,255,255,0.8);
+  border: none;
+  color: #333;
+  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 12px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.popup-arrow:hover:not(:disabled) {
+  background: hotpink;
+  color: #fff;
+}
+
+.popup-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.popup-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+}
+
+.popup-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  display: relative;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: 2px solid transparent;
+}
+
+.popup-indicator.active {
+  background: hotpink;
+  border-color: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 0 0px 1px;
+}
   
   @keyframes popupIn {
     from {
