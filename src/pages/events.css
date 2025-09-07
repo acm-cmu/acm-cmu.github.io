@@ -37,14 +37,16 @@
 .popup-content {
   display: flex;
   background: #333333;
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 12px;
   width: auto;
-  /* fix the popup height */
-  height: 400px;           /* whatever fixed height you want */
+  height: 400px;
   max-width: 80vw;
+  box-shadow: 0 8px 24px rgba(111, 110, 110, 0.4);
   animation: popupIn 0.3s ease-out;
+  gap: 20px;
+  padding: 20px;
 }
+
 
 .popup-image {
   display: block;
@@ -56,15 +58,107 @@
   max-width: 100%;
 }
 
+.picture-wrapper {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .popup-text {
-  padding: 20px;
-  /* allow text to scroll if it’s taller than the popup */
+  flex: 1;
+  padding: 10px 20px;
   overflow-y: auto;
-  width: 300px;            /* or whatever width you like for text */
+}
+
+.picture-wrapper picture,
+.picture-wrapper img {
+  display: block;          
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;     
+  border-radius: 5px;
 }
 
 
-  
+@media (max-width: 1024px) {
+  .popup-content {
+    flex-direction: column;
+    height: auto;
+    max-height: 90vh;
+    padding: 15px;
+  }
+
+  .picture-wrapper {
+    flex: none;
+    max-height: 40vh; 
+  }
+
+  .popup-text {
+    flex: none;
+    max-height: 50vh;
+    width: auto;
+  }
+}
+
+.popup-arrows {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  z-index: 10;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-arrow.left {
+  border-radius: 999px 0 0 999px;
+}
+.popup-arrow.right {
+  border-radius: 0 999px 999px 0;
+}
+
+.popup-arrow {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.popup-arrow:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.popup-arrow.left {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.popup-arrow.right {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.popup-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
   @keyframes popupIn {
     from {
       opacity: 0;
@@ -76,3 +170,7 @@
     }
   }
   
+.link-icon {
+  margin-left: 3px;
+  margin-bottom: 3px;
+}
