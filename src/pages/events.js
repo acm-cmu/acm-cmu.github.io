@@ -78,6 +78,20 @@ function Popup({ event, onClose }) {
         <div className="popup-text">
           <h2>{event.name}</h2>
           <p>{event.description}</p>
+          {event.website && (
+            <p>
+              <a
+                className="event-link"
+                href={event.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit event website
+                <ExternalLinkIcon />
+              </a>
+            </p>
+          )}
+
         </div>
       </div>
     </div>
@@ -89,6 +103,7 @@ export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const events = [
+    { name: 'HackCMU 2024', imagePage: 'images/events/hackcmu2024.png', imagePopups: ["images/events/hackcmu-2024-popup1.jpg", "images/events/hackcmu-2024-popup2.jpg", "images/events/hackcmu-2024-popup3.jpg", "images/events/hackcmu-2024-popup4.jpg", "images/events/hackcmu-2024-popup5.jpg", "images/events/hackcmu-2024-popup6.jpg", "images/events/hackcmu-2024-popup7.jpg", "images/events/hackcmu-2024-popup8.jpg", "images/events/hackcmu-2024-popup9.jpg"], description: 'HackCMU 2024 took place on September 13-14 with the theme "Cyberpunk". Participants built innovative projects in one of three core tracks — Education, Sustainability, and Healthcare — tackling real-world challenges with creativity and technical skill. Alongside track winners, teams also competed for special awards including Most Creative Hack, People’s Choice Prize, Best Use of Data, and the Grand Prize, celebrating boundary-pushing ideas and futuristic design.', website: 'https://www.acmatcmu.com/#/hackcmu'},
     { name: 'AWAP 2024 - Debris Defense', imagePage: 'images/events/awap2024-debris.png',  imagePopups: ["images/events/awap2024-popup.jpg", "images/events/awap2024-popup2.webp", "images/events/awap2024-popup3.jpg", "images/events/awap2024-popup4.webp"], description: 'AWAP 2024 was held on January 27-28, 2024. In Debris Defense, teams design algorithms to manage limited energy and deploy powerful tools to keep orbital lanes safe. Players can build new ships — each with unique cooldowns, ranges, and strengths — construct solar panels to fuel long-term operations, or even redirect debris toward opponents to overload their defenses. The challenge is to balance energy production, fleet composition, and offensive pressure while anticipating the constant flow of hazardous debris.' },
     
     { name: 'HackCMU 2023', imagePage: 'images/events/hackcmu2023.png', imagePopups: ["images/events/hackcmu2023-popup.png", "images/events/hackcmu-2023-popup1.webp", "images/events/hackcmu-2023-popup2.jpg", "images/events/hackcmu-2023-popup3.jpg", "images/events/hackcmu-2023-popup4.jpg"], description: 'HackCMU 2023 was held on September 15-16, bringing together students, innovators, and tech enthusiasts for a weekend of collaborative coding and creativity. Participants engage in a fast-paced, 24-hour challenge to build innovative solutions, with access to workshops, mentorship, and a diverse array of tools and technologies.' },
@@ -153,12 +168,12 @@ export default function Events() {
               <p className="event-name">AWAP 2025 - Raid CMU Legends<ExternalLinkIcon /></p>
             </a>
           </div>
-          <div className="event-item">
+          {/* <div className="event-item">
             <Link to="/hackcmu">
               <ResponsiveImage src="images/events/hackcmu2024.png" alt="HackCMU 2024" className="" />
               <p className="event-name">HackCMU 2024<ExternalLinkIcon /></p>
             </Link>
-          </div>
+          </div> */}
           {events.map((event, index) => (
             <div className="event-item" key={index} onClick={() => handleEventClick(event)}>
               <ResponsiveImage src={event.imagePage} alt={event.name} className="" />
