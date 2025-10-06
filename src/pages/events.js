@@ -1,16 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import './events.css'; 
+import './events.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 function ExternalLinkIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="link-icon" >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={16}
+      height={16}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="link-icon"
+    >
       <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
       <polyline points="15 3 21 3 21 9" />
       <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
-  )}
+  );
+}
 
 // Helper component for responsive images
 function ResponsiveImage({ src, alt, className }) {
@@ -27,11 +39,16 @@ function ResponsiveImage({ src, alt, className }) {
     <picture>
       <source srcSet={webpSrc} type="image/webp" onError={handleError} />
       <source srcSet={publicSrc} type="image/png" />
-      <img src={publicSrc} alt={alt} className={className} loading="lazy" onError={handleError} />
+      <img
+        src={publicSrc}
+        alt={alt}
+        className={className}
+        loading="lazy"
+        onError={handleError}
+      />
     </picture>
   );
 }
-
 
 // Popup component
 function Popup({ event, onClose }) {
@@ -40,35 +57,65 @@ function Popup({ event, onClose }) {
   // Close popup with "esc"
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === 'Escape') onClose();
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
   if (!event) return null;
 
-  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % event.imagePopups.length);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + event.imagePopups.length) % event.imagePopups.length);
+  const nextSlide = () =>
+    setCurrentIndex((prev) => (prev + 1) % event.imagePopups.length);
+  const prevSlide = () =>
+    setCurrentIndex(
+      (prev) => (prev - 1 + event.imagePopups.length) % event.imagePopups.length
+    );
 
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
         <div className="picture-wrapper">
-          {event.imagePopups.length > 1 && 
-            <div className="popup-arrows" >
-              <button className="popup-arrow left" onClick={prevSlide} disabled={event.imagePopups.length <= 1}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="popup-icon">
+          {event.imagePopups.length > 1 && (
+            <div className="popup-arrows">
+              <button
+                className="popup-arrow left"
+                onClick={prevSlide}
+                disabled={event.imagePopups.length <= 1}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="popup-icon"
+                >
                   <polyline points="15 18 9 12 15 6" />
                 </svg>
               </button>
-              <button className="popup-arrow right" onClick={nextSlide} disabled={event.imagePopups.length <= 1}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="popup-icon">
+              <button
+                className="popup-arrow right"
+                onClick={nextSlide}
+                disabled={event.imagePopups.length <= 1}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="popup-icon"
+                >
                   <polyline points="9 18 15 12 9 6" />
-                </svg >
+                </svg>
               </button>
             </div>
-          }
+          )}
           <ResponsiveImage
             src={event.imagePopups[currentIndex]}
             alt={event.name}
@@ -77,7 +124,7 @@ function Popup({ event, onClose }) {
         </div>
         <div className="popup-text">
           <h2>{event.name}</h2>
-          <p>{event.description}</p>
+          <p style={{ whiteSpace: 'pre-line' }}>{event.description}</p>
           {event.website && (
             <p>
               <a
@@ -91,18 +138,49 @@ function Popup({ event, onClose }) {
               </a>
             </p>
           )}
-
         </div>
       </div>
     </div>
   );
 }
 
-
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  // ✅ Current events array
+  const currentEvents = [
+    {
+      name: 'HackCMU 2025',
+      imagePage: 'images/events/hackcmu2025.png',
+      imagePopups: [
+        
+        'images/events/hackcmu2025-popup-1.jpg',
+        'images/events/hackcmu2025-popup-2.jpg',
+        'images/events/hackcmu2025-popup-3.jpg',
+        'images/events/hackcmu2025-popup-4.jpg',
+        'images/events/hackcmu2025-popup-5.jpg',
+        'images/events/hackcmu2025-popup-6.jpg',
+        'images/events/hackcmu2025-popup-7.jpg',
+        'images/events/hackcmu2025-popup-8.jpg',
+        'images/events/hackcmu2025-popup-9.jpg',
+        'images/events/hackcmu2025-popup-10.jpg',
+      ],
+      description:
+        'AMC\'s 10th annual hackathon, HackCMU 2025, took place on September 12-13 with a record breaking 900+ registrations and 110+ project submissions. Participants submitted projects to one of four tracks: Gamification, Retro, Digital Media, and Health & Sustainability. In addition to track winners, teams also competed for the Best AI Hack and the Grand Prize.',
+      website: 'https://www.acmatcmu.com/hackcmu2025/'
+    },
+    {
+      name: 'AWAP 2026 - Coming Soon!',
+      imagePage: '',
+      imagePopups: ['images/events/awap2023-popup.png'],
+      description: 'Stay tuned for the next AWAP challenge!'
+    }
+  ];
+
+
   const events = [
+    { name: 'AWAP 2025 - Raid CMU Legends', imagePage: 'images/events/awap2024.png', imagePopups: ["images/events/awap2025-popup-1.jpg", "images/events/awap2025-popup-2.jpg", "images/events/awap2025-popup-3.jpg"], description: 'AWAP 2025 took place on February 15–16, 2025 with the theme "Raid CMU Legends". Players face off as rival kingdoms battling for control of Great Pittsburgia — capturing castles, expanding armies, and crushing opponents in a medieval style arena. Teams design algorithms to deploy and train troops, explore for resources, and construct or destroy buildings to gain an upper hand.', website: 'https://awap.acmatcmu.com/'},
+   
     { name: 'HackCMU 2024', imagePage: 'images/events/hackcmu2024.png', imagePopups: ["images/events/hackcmu-2024-popup1.jpg", "images/events/hackcmu-2024-popup2.jpg", "images/events/hackcmu-2024-popup3.jpg", "images/events/hackcmu-2024-popup4.jpg", "images/events/hackcmu-2024-popup5.jpg", "images/events/hackcmu-2024-popup6.jpg", "images/events/hackcmu-2024-popup7.jpg", "images/events/hackcmu-2024-popup8.jpg", "images/events/hackcmu-2024-popup9.jpg"], description: 'HackCMU 2024 took place on September 13-14 with the theme "Cyberpunk". Participants built innovative projects in one of three core tracks — Education, Sustainability, and Healthcare — tackling real-world challenges with creativity and technical skill. Alongside track winners, teams also competed for special awards including Most Creative Hack, People’s Choice Prize, Best Use of Data, and the Grand Prize, celebrating boundary-pushing ideas and futuristic design.', website: 'https://www.acmatcmu.com/#/hackcmu'},
     { name: 'AWAP 2024 - Debris Defense', imagePage: 'images/events/awap2024-debris.png',  imagePopups: ["images/events/awap2024-popup.jpg", "images/events/awap2024-popup2.webp", "images/events/awap2024-popup3.jpg", "images/events/awap2024-popup4.webp"], description: 'AWAP 2024 was held on January 27-28, 2024. In Debris Defense, teams design algorithms to manage limited energy and deploy powerful tools to keep orbital lanes safe. Players can build new ships — each with unique cooldowns, ranges, and strengths — construct solar panels to fuel long-term operations, or even redirect debris toward opponents to overload their defenses. The challenge is to balance energy production, fleet composition, and offensive pressure while anticipating the constant flow of hazardous debris.' },
     
@@ -129,59 +207,54 @@ export default function Events() {
     { name: 'HackCMU 2016', imagePage: 'images/events/hackcmu2016.png', imagePopups: ["images/events/hackcmu2016-popup.png"], description: 'HackCMU 2016 and brought 164 CMU students together on September 16–17 at Gates for a 24-hour in-person sprint. Teams submitted 90-second YouTube demos showcasing projects judged on originality, technical difficulty, polish, and real-world usefulness.' },
     { name: 'HackCMU 2015', imagePage: 'images/events/hackcmu2015.png', imagePopups: ["images/events/hackcmu2015-popup.png"], description: "HackCMU 2015 was a full-day hackathon held September 25–26 on campus. Teams had roughly 24 hours to ideate, code, and submit 90-second demo videos, then pitched their projects in an evening closing ceremony. With over $6,700 in prizes, sponsored challenges rewarded everything from Python power-users (AQR Python Award) to the Most Amusing Project (Heap Award), showcasing participants' creativity, technical prowess, and real-world impact."},
   ];
-
-  const handleEventClick = (event) => { 
+const handleEventClick = (event) => {
     setSelectedEvent(event);
   };
 
   const handleClosePopup = useCallback(() => {
     setSelectedEvent(null);
-  }, [])
+  }, []);
+
+  const renderEventGrid = (eventsList) => (
+    <div className="grid" id="events-grid">
+      {eventsList.map((event, index) => (
+        <div
+          className="event-item"
+          key={index}
+          onClick={() => handleEventClick(event)}
+        >
+          {event.imagePage && (
+            <ResponsiveImage src={event.imagePage} alt={event.name} />
+          )}
+          <p className="event-name">{event.name}</p>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div id="events">
       <div className="container">
-        <div className="title" id="header">Events</div>
+        <div className="title" id="header">
+          Events
+        </div>
         <div className="infotext">
           ACM@CMU hosts multiple major events every year, giving fun opportunities for current students to hone their skills. Aside from our major events, we also host info sessions, tech talks, and ice cream socials for the general CMU community.
         </div>
-        <div className="event-pink-title" id="header">Current Events</div>
-        <div className="grid" id="events-grid">
-          <div className="event-item">
-            <a href="https://www.acmatcmu.com/hackcmu2025/" target="_blank" rel="noopener noreferrer">
-              <ResponsiveImage src="images/events/hackcmu2025.png" alt="HackCMU 2025" className="" />
-              <p className="event-name">HackCMU 2025<ExternalLinkIcon /></p>
-              <p className="event-name">September 12 - 13</p>
-            </a>
-          </div>
 
-          <div className="event-item">
-            <p className="event-name">AWAP 2026 - Coming Soon!</p>
-          </div>
+        <div className="event-pink-title" id="header">
+          Current Events
         </div>
-        <div className="plat-tier-label" id="header">Past Events</div>
+        {renderEventGrid(currentEvents)}
 
-        <div className="grid" id="events-grid">
-          <div className="event-item">
-            <a href="https://awap.acmatcmu.com/" target="_blank" rel="noopener noreferrer">
-              <ResponsiveImage src="images/events/awap2024.png" alt="AWAP 2025" className="" />
-              <p className="event-name">AWAP 2025 - Raid CMU Legends<ExternalLinkIcon /></p>
-            </a>
-          </div>
-          {/* <div className="event-item">
-            <Link to="/hackcmu">
-              <ResponsiveImage src="images/events/hackcmu2024.png" alt="HackCMU 2024" className="" />
-              <p className="event-name">HackCMU 2024<ExternalLinkIcon /></p>
-            </Link>
-          </div> */}
-          {events.map((event, index) => (
-            <div className="event-item" key={index} onClick={() => handleEventClick(event)}>
-              <ResponsiveImage src={event.imagePage} alt={event.name} className="" />
-              <p className="event-name">{event.name}</p>
-            </div>
-          ))}
+        <div className="plat-tier-label" id="header">
+          Past Events
         </div>
-        {selectedEvent && <Popup event={selectedEvent} onClose={handleClosePopup} />}
+        {renderEventGrid(events)}
+
+        {selectedEvent && (
+          <Popup event={selectedEvent} onClose={handleClosePopup} />
+        )}
       </div>
     </div>
   );
