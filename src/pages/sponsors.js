@@ -44,6 +44,20 @@ export default function Sponsors() {
   const [selectedSponsor, setSelectedSponsor] = useState(null);
 
   const sponsors = [
+     {
+      name: "Ripple",
+      imagePage: "images/sponsors/ripple.png",
+      imagePopup: "images/sponsors/ripple.png",
+      description: "Ripple's University Blockchain Research Initiative.",
+      link: "https://ripple.com/impact/ubri/"
+    },
+    {
+      name: "QNX",
+      imagePage: "images/sponsors/qnx.png",
+      imagePopup: "images/sponsors/qnx.png",
+      description: "QNX Software Systems.",
+      link: "https://qnx.software/en"
+    },
     {
       name: "Citadel",
       imagePage: "images/sponsors/citadel.png",
