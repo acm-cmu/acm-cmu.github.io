@@ -56,11 +56,11 @@ export default function Layout({ children }) {
         <ul id="navigation">
           <li>
             <a
-              href="https://www.acmatcmu.com/hackcmu2025/"
+              href="https://awap.acmatcmu.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              HackCMU_2025
+              AWAP_2026
             </a>
           </li>
           <li>

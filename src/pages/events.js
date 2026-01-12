@@ -153,7 +153,6 @@ export default function Events() {
       name: 'HackCMU 2025',
       imagePage: 'images/events/hackcmu2025.png',
       imagePopups: [
-        
         'images/events/hackcmu2025-popup-1.jpg',
         'images/events/hackcmu2025-popup-2.jpg',
         'images/events/hackcmu2025-popup-3.jpg',
@@ -170,10 +169,9 @@ export default function Events() {
       website: 'https://www.acmatcmu.com/hackcmu2025/'
     },
     {
-      name: 'AWAP 2026 - Coming Soon!',
-      imagePage: '',
-      imagePopups: ['images/events/awap2023-popup.png'],
-      description: 'Stay tuned for the next AWAP challenge!'
+      name: 'AWAP 2026 - Carnegie Cookout',
+      imagePage: 'images/events/awap2026.png',
+      link: 'https://awap.acmatcmu.com/'
     }
   ];
 
@@ -219,10 +217,16 @@ const handleEventClick = (event) => {
     <div className="grid" id="events-grid">
       {eventsList.map((event, index) => (
         <div
-          className="event-item"
-          key={index}
-          onClick={() => handleEventClick(event)}
-        >
+            className="event-item"
+            key={index}
+            onClick={() => {
+              if (event.link) {
+                window.open(event.link, '_blank');
+              } else {
+                handleEventClick(event);
+              }
+            }}
+          >
           {event.imagePage && (
             <ResponsiveImage src={event.imagePage} alt={event.name} />
           )}
