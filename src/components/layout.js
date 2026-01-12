@@ -94,7 +94,7 @@ export default function Layout({ children }) {
 
       <script src="terminal.js" data-terminal-container></script>
 
-      <div id="footer">© 2025 ACM@CMU.</div>
+      <div id="footer">© 2026 ACM@CMU.</div>
     </div>
   );
 }

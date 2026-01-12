@@ -2,6 +2,7 @@
 ACM@CMU main website: https://www.acmatcmu.com/                        
 HackCMU 2024 website: https://www.acmatcmu.com/#/hackcmu        
 HackCMU 2025 website: https://www.acmatcmu.com/hackcmu2025/        
+AWAP 2026 website: https://awap.acmatcmu.com/
 
 `npm run build`           
 `npm run deploy`               
