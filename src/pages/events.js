@@ -165,7 +165,7 @@ export default function Events() {
         'images/events/hackcmu2025-popup-10.jpg',
       ],
       description:
-        'AMC\'s 10th annual hackathon, HackCMU 2025, took place on September 12-13 with a record breaking 900+ registrations and 110+ project submissions. Participants submitted projects to one of four tracks: Gamification, Retro, Digital Media, and Health & Sustainability. In addition to track winners, teams also competed for the Best AI Hack and the Grand Prize.',
+        'ACM\'s 10th annual hackathon, HackCMU 2025, took place on September 12-13 with a record breaking 900+ registrations and 110+ project submissions. Participants submitted projects to one of four tracks: Gamification, Retro, Digital Media, and Health & Sustainability. In addition to track winners, teams also competed for the Best AI Hack and the Grand Prize.',
       website: 'https://www.acmatcmu.com/hackcmu2025/'
     },
     {
