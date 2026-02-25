@@ -150,6 +150,20 @@ export default function Events() {
   // ✅ Current events array
   const currentEvents = [
     {
+      name: 'AWAP 2026 - Carnegie Cookout',
+      imagePage: 'images/events/awap2026.png',
+      link: 'https://awap.acmatcmu.com/'
+    },
+    {
+      name: 'Hackberry Pi 2026',
+      imagePage: 'images/events/hackberrypi2026.png',
+      link: 'https://www.acmatcmu.com/#/hackberrypi'
+    }
+  ];
+
+
+  const events = [
+    {
       name: 'HackCMU 2025',
       imagePage: 'images/events/hackcmu2025.png',
       imagePopups: [
@@ -168,15 +182,6 @@ export default function Events() {
         'ACM\'s 10th annual hackathon, HackCMU 2025, took place on September 12-13 with a record breaking 900+ registrations and 110+ project submissions. Participants submitted projects to one of four tracks: Gamification, Retro, Digital Media, and Health & Sustainability. In addition to track winners, teams also competed for the Best AI Hack and the Grand Prize.',
       website: 'https://www.acmatcmu.com/hackcmu2025/'
     },
-    {
-      name: 'AWAP 2026 - Carnegie Cookout',
-      imagePage: 'images/events/awap2026.png',
-      link: 'https://awap.acmatcmu.com/'
-    }
-  ];
-
-
-  const events = [
     { name: 'AWAP 2025 - Raid CMU Legends', imagePage: 'images/events/awap2024.png', imagePopups: ["images/events/awap2025-popup-1.jpg", "images/events/awap2025-popup-2.jpg", "images/events/awap2025-popup-3.jpg"], description: 'AWAP 2025 took place on February 15–16, 2025 with the theme "Raid CMU Legends". Players face off as rival kingdoms battling for control of Great Pittsburgia — capturing castles, expanding armies, and crushing opponents in a medieval style arena. Teams design algorithms to deploy and train troops, explore for resources, and construct or destroy buildings to gain an upper hand.', website: 'https://www.acmatcmu.com/awap-landing-page-2025/'},
    
     { name: 'HackCMU 2024', imagePage: 'images/events/hackcmu2024.png', imagePopups: ["images/events/hackcmu-2024-popup1.jpg", "images/events/hackcmu-2024-popup2.jpg", "images/events/hackcmu-2024-popup3.jpg", "images/events/hackcmu-2024-popup4.jpg", "images/events/hackcmu-2024-popup5.jpg", "images/events/hackcmu-2024-popup6.jpg", "images/events/hackcmu-2024-popup7.jpg", "images/events/hackcmu-2024-popup8.jpg", "images/events/hackcmu-2024-popup9.jpg"], description: 'HackCMU 2024 took place on September 13-14 with the theme "Cyberpunk". Participants built innovative projects in one of three core tracks — Education, Sustainability, and Healthcare — tackling real-world challenges with creativity and technical skill. Alongside track winners, teams also competed for special awards including Most Creative Hack, People’s Choice Prize, Best Use of Data, and the Grand Prize, celebrating boundary-pushing ideas and futuristic design.', website: 'https://www.acmatcmu.com/#/hackcmu'},
