@@ -35,11 +35,13 @@ export default function Layout({ children }) {
     return () => clearTimeout(timer);
   }, [location]);
 
-  // Check if the current path is '/hackcmu' to conditionally render the layout
-  const isHackCMUPage = location.pathname === "/hackcmu";
+  // Check if the current path should bypass the global layout
+  const bypassLayout =
+    location.pathname === "/hackcmu" ||
+    location.pathname === "/hackberrypi";
 
-  if (isHackCMUPage) {
-    return <>{children}</>; // Render only children without the layout for the '/hackcmu' page
+  if (bypassLayout) {
+    return <>{children}</>;
   }
 
   return (

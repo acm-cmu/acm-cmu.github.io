@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+/* ============================================================
+   HACKBERRY PI — Global
+   ============================================================ */
+:root {
+  --hbp-red: #c91a4a;
+  --hbp-green: #75a940;
+  --hbp-bg: #0a0a0a;
+  --hbp-navbar-height: max(8vh, 56px);
+}
+
+.hackberrypi {
+  background-color: var(--hbp-bg);
+  color: white;
+  font-family: 'Montserrat', monospace;
+  font-weight: 400;
+  text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.hbp-navbar {
+  position: sticky;
+  top: 0;
+  height: 0;
+  z-index: 1000;
+}
+
+.hbp-navbar-content {
+  height: var(--hbp-navbar-height);
+  display: flex;
+  align-items: center;
+  background-color: rgba(10, 10, 10, 0.96);
+  border-bottom: 2px solid var(--hbp-red);
+  backdrop-filter: blur(6px);
+}
+
+.hbp-navbar-logo {
+  font-weight: 800;
+  font-size: 1.6em;
+  color: var(--hbp-red);
+  margin-left: 2em;
+  cursor: pointer;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.hbp-links-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10em;
+}
+
+.hbp-link {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-left: 1.8em;
+  cursor: pointer;
+  color: white;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.hbp-link:hover {
+  color: rgba(193, 36, 66, 1);
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hbp-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4em;
+  background-color: rgba(193, 36, 66, 1);
+  /* layer 1: event image (top, centered, no repeat) | layer 2: pattern (repeat-x, full height) */
+  background-size: contain, auto 100%;
+  background-repeat: no-repeat, repeat-x;
+  background-position: top center, center;
+}
+
+.hbp-hero-content {
+  z-index: 1;
+}
+
+.hbp-signup-button {
+  display: inline-block;
+  background-color: white;
+  color: var(--hbp-red);
+  font-family: 'Montserrat', monospace;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 0.75em 2.8em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  text-decoration: none;
+  border: 3px solid white;
+  margin: 0 auto;
+  letter-spacing: 0.5px;
+}
+
+.hbp-signup-button:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.04);
+}
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+.hbp-section {
+  padding: 5em 2em;
+}
+
+.hbp-section-header {
+  font-size: 4em;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 0.6em;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.hbp-about {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hbp-about-content {
+  display: flex;
+  flex-direction: row;
+  gap: 4em;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.hbp-about-text {
+  flex: 1;
+  max-width: 550px;
+  font-size: 1.05em;
+  line-height: 1.9;
+  color: #ccc;
+}
+
+.hbp-about-text p {
+  margin-bottom: 1em;
+}
+
+.hbp-about-text strong {
+  color: var(--hbp-green);
+}
+
+/* TIMELINE */
+.hbp-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 280px;
+  max-width: 340px;
+}
+
+.hbp-timeline-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1em;
+  text-align: left;
+  width: 100%;
+}
+
+.hbp-timeline-dot {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  border-radius: 50%;
+  background-color: var(--hbp-red);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.hbp-timeline-body {
+  flex: 1;
+  padding-bottom: 0.2em;
+}
+
+.hbp-timeline-date {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--hbp-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.15em;
+}
+
+.hbp-timeline-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.2em;
+}
+
+.hbp-timeline-desc {
+  font-size: 0.9em;
+  color: #999;
+  line-height: 1.5;
+}
+
+.hbp-timeline-connector {
+  width: 2px;
+  height: 2.5em;
+  background: var(--hbp-red);
+  margin-left: 6px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+
+/* ============================================================
+   SPONSORS
+   ============================================================ */
+.hbp-sponsors {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hbp-sponsors-infotext {
+  font-size: 1.05em;
+  color: #bbb;
+  max-width: 650px;
+  margin: 0 auto 1em;
+  line-height: 1.7;
+}
+
+.hbp-sponsors-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.hbp-sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hbp-sponsor-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hbp-sponsor-item img {
+  max-width: 220px;
+  height: auto;
+}
+
+.hbp-sponsors-footer {
+  height: 4em;
+}
+
+/* ============================================================
+   SPONSOR POPUP
+   ============================================================ */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.hbp-popup-content {
+  display: flex;
+  background: #1e1e1e;
+  border: 2px solid var(--hbp-red);
+  border-radius: 16px;
+  width: auto;
+  height: 320px;
+  max-width: 80vw;
+  box-shadow: 0 8px 32px rgba(201, 26, 74, 0.3);
+  animation: popupIn 0.25s ease-out;
+  gap: 24px;
+  padding: 24px;
+}
+
+@keyframes popupIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.hbp-popup-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1.5;
+}
+
+.hbp-popup-image {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.popup-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: left;
+  color: white;
+}
+
+.popup-text h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: white;
+}
+
+.popup-text p {
+  font-size: 1em;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.popup-text a {
+  color: var(--hbp-red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.popup-text a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media only screen and (max-width: 768px) {
+  .hbp-hero-title {
+    font-size: 4em;
+  }
+
+  .hbp-about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hbp-timeline {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hbp-section-header {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .hbp-hero-title {
+    font-size: 2.8em;
+  }
+
+  .hbp-hero-subtitle {
+    font-size: 1em;
+  }
+
+  .hbp-navbar-content {
+    visibility: hidden;
+    height: 0 !important;
+  }
+
+  .bm-burger-button {
+    visibility: visible;
+  }
+
+  .hbp-section-header {
+    font-size: 2.5em;
+  }
+
+  .hbp-about-text {
+    font-size: 0.95em;
+  }
+
+  .hbp-project-card {
+    max-width: 85vw;
+  }
+
+  .hbp-sponsor-item {
+    width: 140px;
+    height: 70px;
+  }
+}
