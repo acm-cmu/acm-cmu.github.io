@@ -122,6 +122,13 @@ export default function Sponsors() {
       link: "https://ethereum.org"
     },
     {
+      name: "Visa",
+      imagePage: "images/sponsors/visa.png",
+      imagePopup: "images/sponsors/visa.png",
+      description: "Visa",
+      link: "https://usa.visa.com/careers.html"
+    },
+    {
       name: "Sandia",
       imagePage: "images/sponsors/sandia.png",
       imagePopup: "images/sponsors/sandia.png",

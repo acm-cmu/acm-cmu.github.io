@@ -237,6 +237,13 @@ const HBPSponsors = () => {
       link: "https://www.sandia.gov"
     },
     {
+      name: "Visa",
+      imagePage: "images/sponsors/visa.png",
+      imagePopup: "images/sponsors/visa.png",
+      description: "Visa",
+      link: "https://usa.visa.com/careers.html"
+    },
+    {
       name: "SCM",
       imagePage: "images/sponsors/scm.png",
       imagePopup: "images/sponsors/scm.png",
