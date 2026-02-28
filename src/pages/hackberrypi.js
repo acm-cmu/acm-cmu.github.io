@@ -100,7 +100,7 @@ const HBPAbout = () => {
             is happening on <strong>Monday 3/9!</strong>!
           </p>
           <p>
-            We'll be giving out <strong>free Raspberry Pis</strong> at kickoff on Monday 3/8,
+            We'll be giving out <strong>free Raspberry Pis</strong> at kickoff on Monday 3/9,
             and you'll have a week to build anything you want. We'll wrap up with our expo
             (winners + pie) on <strong>Saturday 3/14</strong>.
           </p>
