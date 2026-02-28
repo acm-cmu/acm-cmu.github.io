@@ -156,7 +156,7 @@ export default function Events() {
     },
     {
       name: 'Hackberry Pi 2026',
-      imagePage: 'images/events/hackberrypi2026.png',
+      imagePage: 'images/events/HackberryPi2026.png',
       link: 'https://www.acmatcmu.com/#/hackberrypi'
     }
   ];
