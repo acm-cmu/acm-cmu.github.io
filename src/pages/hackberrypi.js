@@ -97,7 +97,7 @@ const HBPAbout = () => {
         <div className="hbp-about-text">
           <p>
             Our annual hardware hackathon, <strong>Hackberry Pi</strong>, presented by ACM@CMU,
-            is happening on <strong>Monday 3/8</strong>!
+            is happening on <strong>Monday 3/9!</strong>!
           </p>
           <p>
             We'll be giving out <strong>free Raspberry Pis</strong> at kickoff on Monday 3/8,
@@ -118,7 +118,7 @@ const HBPAbout = () => {
           <div className="hbp-timeline-item">
             <div className="hbp-timeline-dot" />
             <div className="hbp-timeline-body">
-              <div className="hbp-timeline-date">Mon 3/8</div>
+              <div className="hbp-timeline-date">Mon 3/9, 6pm</div>
               <div className="hbp-timeline-title">Kickoff</div>
               <div className="hbp-timeline-desc">Get your free Raspberry Pi and start hacking!</div>
             </div>
@@ -127,7 +127,7 @@ const HBPAbout = () => {
           <div className="hbp-timeline-item">
             <div className="hbp-timeline-dot" />
             <div className="hbp-timeline-body">
-              <div className="hbp-timeline-date">3/8 – 3/14</div>
+              <div className="hbp-timeline-date">3/9 – 3/14</div>
               <div className="hbp-timeline-title">Build Week</div>
               <div className="hbp-timeline-desc">One week to build anything you want!</div>
             </div>
@@ -136,7 +136,7 @@ const HBPAbout = () => {
           <div className="hbp-timeline-item">
             <div className="hbp-timeline-dot" />
             <div className="hbp-timeline-body">
-              <div className="hbp-timeline-date">Sat 3/14</div>
+              <div className="hbp-timeline-date">Sat 3/14, 1pm</div>
               <div className="hbp-timeline-title">Expo</div>
               <div className="hbp-timeline-desc">Demo your project, win prizes, and enjoy some pie 🥧</div>
             </div>
