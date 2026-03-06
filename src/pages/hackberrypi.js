@@ -97,7 +97,7 @@ const HBPAbout = () => {
         <div className="hbp-about-text">
           <p>
             Our annual hardware hackathon, <strong>Hackberry Pi</strong>, presented by ACM@CMU,
-            is happening on <strong>Monday 3/9!</strong>!
+            is happening on <strong>Monday 3/9</strong>!
           </p>
           <p>
             We'll be giving out <strong>free Raspberry Pis</strong> at kickoff on Monday 3/9,
