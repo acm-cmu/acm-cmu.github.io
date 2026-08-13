@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './events.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function ExternalLinkIcon() {
   return (
@@ -26,25 +26,25 @@ function ExternalLinkIcon() {
 
 // Helper component for responsive images
 function ResponsiveImage({ src, alt, className }) {
+  const [webpFailed, setWebpFailed] = useState(false);
   const publicSrc = `${process.env.PUBLIC_URL}/${src}`;
   const webpSrc = publicSrc.replace(/\.png$/, '.webp');
 
-  const handleError = (e) => {
-    if (e.target.src.endsWith('.webp')) {
-      e.target.src = publicSrc;
-    }
-  };
+  if (webpFailed) {
+    return (
+      <img src={publicSrc} alt={alt} className={className} loading="lazy" />
+    );
+  }
 
   return (
     <picture>
-      <source srcSet={webpSrc} type="image/webp" onError={handleError} />
-      <source srcSet={publicSrc} type="image/png" />
+      <source srcSet={webpSrc} type="image/webp" />
       <img
         src={publicSrc}
         alt={alt}
         className={className}
         loading="lazy"
-        onError={handleError}
+        onError={() => setWebpFailed(true)}
       />
     </picture>
   );
@@ -146,9 +146,19 @@ function Popup({ event, onClose }) {
 
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const navigate = useNavigate();
 
   // ✅ Current events array
   const currentEvents = [
+    {
+      name: 'HackCMU 2026',
+      imagePage: 'images/events/hackcmu-2026.png',
+      link: '/hackcmu2026'
+    }
+  ];
+
+
+  const events = [
     {
       name: 'AWAP 2026 - Carnegie Cookout',
       imagePage: 'images/events/awap2026.png',
@@ -158,11 +168,7 @@ export default function Events() {
       name: 'Hackberry Pi 2026',
       imagePage: 'images/events/HackberryPi2026.png',
       link: 'https://www.acmatcmu.com/#/hackberrypi'
-    }
-  ];
-
-
-  const events = [
+    },
     {
       name: 'HackCMU 2025',
       imagePage: 'images/events/hackcmu2025.png',
@@ -226,7 +232,11 @@ const handleEventClick = (event) => {
             key={index}
             onClick={() => {
               if (event.link) {
-                window.open(event.link, '_blank');
+                if (event.link.startsWith('/')) {
+                  navigate(event.link);
+                } else {
+                  window.open(event.link, '_blank');
+                }
               } else {
                 handleEventClick(event);
               }
