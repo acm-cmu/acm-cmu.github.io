@@ -2,36 +2,103 @@ import React from "react";
 
 const profiles_current = [
   {
+    id: "katiew",
+    name: "Katie Wang",
+    title: "President",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "vincentl",
+    name: "Vincent Lo",
+    title: "Vice President",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "alanap",
+    name: "Alana Pereira",
+    title: "Secretary",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "veronicas",
+    name: "Veronica Shao",
+    title: "Treasurer",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "tylery",
+    name: "Tyler Yang",
+    title: "HackCMU Lead",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "jenniferz",
+    name: "Jennifer Zhu",
+    title: "Co-AWAP Lead",
+    image: "headshots/jennifer.png",
+    linkedin: "https://www.linkedin.com/in/jenny-cs/",
+  },
+  {
+    id: "steveny",
+    name: "Steven Yang",
+    title: "Co-AWAP Lead",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "matthewm",
+    name: "Matthew Milunic",
+    title: "Co-AWAP Lead",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "mikealm",
+    name: "Mikeal Macera",
+    title: "Hackberry Pi Lead",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "nirp",
+    name: "Nir Pechuk",
+    title: "Research Chair",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+  {
+    id: "rachelt",
+    name: "Rachel Tong",
+    title: "Design Chair",
+    image: "headshots/temp.png",
+    linkedin: "",
+  },
+];
+
+const profiles_past = [
+  {
     id: "zanzaoc",
     name: "Jackson Chen",
-    title: "President",
     image: "headshots/jackson.jpg",
     linkedin: "https://www.linkedin.com/in/jacksoncmu/",
   },
   {
     id: "tsaxena",
     name: "Tanisha Saxena",
-    title: "Vice President",
     image: "headshots/tanisha.jpeg",
     linkedin: "https://www.linkedin.com/in/tanishasaxena/",
   },
   {
     id: "aidanz",
     name: "Aidan Zhang",
-    title: "HackCMU Lead",
     image: "headshots/aidan.png",
     linkedin: "https://www.linkedin.com/in/aidanzhang06/",
   },
-  {
-    id: "jenniferz",
-    name: "Jennifer Zhu",
-    title: "AWAP Lead",
-    image: "headshots/jennifer.png",
-    linkedin: "https://www.linkedin.com/in/jenny-cs/",
-  },
-];
-
-const profiles_past = [
   {
     id: "nkurelli",
     name: "Neeha Kurelli",
@@ -72,26 +139,30 @@ export default function About() {
           </div>
 
           <div id="profile-container">
-            {profiles_current.map((profile) => (
-              <a
-                className="profile"
-                id={profile.id}
-                key={profile.id}
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="card">
-                  <div className="card-front">
-                    <div className="cropper">
-                      <img src={profile.image} alt={profile.name} />
+            {profiles_current.map((profile) => {
+              const CardTag = profile.linkedin ? "a" : "div";
+              const linkProps = profile.linkedin
+                ? { href: profile.linkedin, target: "_blank", rel: "noopener noreferrer" }
+                : {};
+              return (
+                <CardTag
+                  className="profile"
+                  id={profile.id}
+                  key={profile.id}
+                  {...linkProps}
+                >
+                  <div className="card">
+                    <div className="card-front">
+                      <div className="cropper">
+                        <img src={profile.image} alt={profile.name} />
+                      </div>
+                      <div className="profile-name">{profile.name}</div>
+                      <div className="profile-title">{profile.title}</div>
                     </div>
-                    <div className="profile-name">{profile.name}</div>
-                    <div className="profile-title">{profile.title}</div>
                   </div>
-                </div>
-              </a>
-            ))}
+                </CardTag>
+              );
+            })}
           </div>
 
           <div className="title" id="header">
