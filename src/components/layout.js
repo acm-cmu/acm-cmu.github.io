@@ -57,13 +57,9 @@ export default function Layout({ children }) {
         </label>
         <ul id="navigation">
           <li>
-            <a
-              href="https://www.acmatcmu.com/#/hackberrypi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              HackberryPi_2026
-            </a>
+            <Link to="/hackcmu2026" id="hackcmu2026">
+              HackCMU_2026
+            </Link>
           </li>
           <li>
             <Link to="/welcome" id="welcome">

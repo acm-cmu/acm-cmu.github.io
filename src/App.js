@@ -6,6 +6,7 @@ import Sponsors from "./pages/sponsors";
 import Layout from "./components/layout";
 import HackCMU from "./pages/hackcmu";
 import HackberryPi from "./pages/hackberrypi";
+import HackCMU2026 from "./pages/hackcmu2026";
 
 function App() {
   return (
@@ -64,6 +65,14 @@ function App() {
           element={
             <Layout>
               <HackberryPi />
+            </Layout>
+          }
+        />
+        <Route
+          path="/hackcmu2026"
+          element={
+            <Layout>
+              <HackCMU2026 />
             </Layout>
           }
         />
