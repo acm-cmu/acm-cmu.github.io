@@ -44,19 +44,19 @@ export default function Sponsors() {
   const [selectedSponsor, setSelectedSponsor] = useState(null);
 
   const sponsors = [
-     {
-      name: "Ripple",
-      imagePage: "images/sponsors/ripple.png",
-      imagePopup: "images/sponsors/ripple.png",
-      description: "Ripple's University Blockchain Research Initiative.",
-      link: "https://ripple.com/impact/ubri/"
+    {
+      name: "Anthropic",
+      imagePage: "images/sponsors/anthropic.png",
+      imagePopup: "images/sponsors/anthropic.png",
+      description: "Anthropic",
+      link: "https://www.anthropic.com"
     },
     {
-      name: "QNX",
-      imagePage: "images/sponsors/qnx.png",
-      imagePopup: "images/sponsors/qnx.png",
-      description: "QNX Software Systems.",
-      link: "https://qnx.software/en"
+      name: "Bloomberg",
+      imagePage: "images/sponsors/bloomberg.png",
+      imagePopup: "images/sponsors/bloomberg.png",
+      description: "Bloomberg",
+      link: "https://www.bloomberg.com/"
     },
     {
       name: "Citadel",
@@ -66,53 +66,11 @@ export default function Sponsors() {
       link: "https://www.citadel.com"
     },
     {
-      name: "The Trade Desk",
-      imagePage: "images/sponsors/thetradedesk.png",
-      imagePopup: "images/sponsors/thetradedesk.png",
-      description: "World-class digital advertising platform.",
-      link: "https://www.thetradedesk.com/us"
-    },
-    {
-      name: "HRT",
-      imagePage: "images/sponsors/hrt.png",
-      imagePopup: "images/sponsors/hrt.png",
-      description: "Hudson River Trading, quantitative trading firm.",
-      link: "https://www.hudsonrivertrading.com/"
-    },
-    {
-      name: "Stripe",
-      imagePage: "images/sponsors/stripe.png",
-      imagePopup: "images/sponsors/stripe.png",
-      description: "Online payment processing for internet businesses.",
-      link: "https://stripe.com"
-    },
-    {
       name: "D. E. Shaw",
       imagePage: "images/sponsors/deshaw.png",
       imagePopup: "images/sponsors/deshaw.png",
       description: "A global investment and technology development firm.",
       link: "https://www.deshaw.com"
-    },
-    {
-      name: "Jane Street",
-      imagePage: "images/sponsors/janestreet.png",
-      imagePopup: "images/sponsors/janestreet.png",
-      description: "Global trading firm.",
-      link: "https://www.janestreet.com"
-    },
-    {
-      name: "Lockheed Martin",
-      imagePage: "images/sponsors/lockheed.png",
-      imagePopup: "images/sponsors/lockheed.png",
-      description: "Aerospace and defense company.",
-      link: "https://www.lockheedmartin.com"
-    },
-    {
-      name: "Anthropic",
-      imagePage: "images/sponsors/anthropic.png",
-      imagePopup: "images/sponsors/anthropic.png",
-      description: "Anthropic",
-      link: "https://www.anthropic.com"
     },
     {
       name: "Ethereum",
@@ -122,11 +80,53 @@ export default function Sponsors() {
       link: "https://ethereum.org"
     },
     {
-      name: "Visa",
-      imagePage: "images/sponsors/visa.png",
-      imagePopup: "images/sponsors/visa.png",
-      description: "Visa",
-      link: "https://usa.visa.com/careers.html"
+      name: "HRT",
+      imagePage: "images/sponsors/hrt.png",
+      imagePopup: "images/sponsors/hrt.png",
+      description: "Hudson River Trading, quantitative trading firm.",
+      link: "https://www.hudsonrivertrading.com/"
+    },
+    {
+      name: "Jane Street",
+      imagePage: "images/sponsors/janestreet.png",
+      imagePopup: "images/sponsors/janestreet.png",
+      description: "Global trading firm.",
+      link: "https://www.janestreet.com"
+    },
+    {
+      name: "Jump Trading",
+      imagePage: "images/sponsors/jump.png",
+      imagePopup: "images/sponsors/jump.png",
+      description: "Jump Trading",
+      link: "https://www.jumptrading.com/"
+    },
+    {
+      name: "Lockheed Martin",
+      imagePage: "images/sponsors/lockheed.png",
+      imagePopup: "images/sponsors/lockheed.png",
+      description: "Aerospace and defense company.",
+      link: "https://www.lockheedmartin.com"
+    },
+    {
+      name: "QNX",
+      imagePage: "images/sponsors/qnx.png",
+      imagePopup: "images/sponsors/qnx.png",
+      description: "QNX Software Systems.",
+      link: "https://qnx.software/en"
+    },
+    {
+      name: "Ripple",
+      imagePage: "images/sponsors/ripple.png",
+      imagePopup: "images/sponsors/ripple.png",
+      description: "Ripple's University Blockchain Research Initiative.",
+      link: "https://ripple.com/impact/ubri/"
+    },
+    {
+      name: "Roblox",
+      imagePage: "images/sponsors/roblox.png",
+      imagePopup: "images/sponsors/roblox.png",
+      description: "Roblox",
+      link: "https://corp.roblox.com/"
     },
     {
       name: "Sandia",
@@ -143,11 +143,25 @@ export default function Sponsors() {
       link: "https://www.scm-lp.com/"
     },
     {
-      name: "Jump Trading",
-      imagePage: "images/sponsors/jump.png",
-      imagePopup: "images/sponsors/jump.png",
-      description: "Jump Trading",
-      link: "https://www.jumptrading.com/"
+      name: "Stripe",
+      imagePage: "images/sponsors/stripe.png",
+      imagePopup: "images/sponsors/stripe.png",
+      description: "Online payment processing for internet businesses.",
+      link: "https://stripe.com"
+    },
+    {
+      name: "The Trade Desk",
+      imagePage: "images/sponsors/thetradedesk.png",
+      imagePopup: "images/sponsors/thetradedesk.png",
+      description: "World-class digital advertising platform.",
+      link: "https://www.thetradedesk.com/us"
+    },
+    {
+      name: "Visa",
+      imagePage: "images/sponsors/visa.png",
+      imagePopup: "images/sponsors/visa.png",
+      description: "Visa",
+      link: "https://usa.visa.com/careers.html"
     },
     {
       name: "Y Combinator",
@@ -155,20 +169,6 @@ export default function Sponsors() {
       imagePopup: "images/sponsors/YC.png",
       description: "Y Combinator",
       link: "https://www.ycombinator.com/"
-    },
-    {
-      name: "Bloomberg",
-      imagePage: "images/sponsors/bloomberg.png",
-      imagePopup: "images/sponsors/bloomberg.png",
-      description: "Bloomberg",
-      link: "https://www.bloomberg.com/"
-    },
-    {
-      name: "Roblox",
-      imagePage: "images/sponsors/roblox.png",
-      imagePopup: "images/sponsors/roblox.png",
-      description: "Roblox",
-      link: "https://corp.roblox.com/"
     }
   ];
 
