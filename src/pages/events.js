@@ -162,12 +162,18 @@ export default function Events() {
     {
       name: 'AWAP 2026 - Carnegie Cookout',
       imagePage: 'images/events/awap2026.png',
-      link: 'https://awap.acmatcmu.com/'
+      imagePopups: ['images/events/awap2026.png'],
+      description:
+        'AWAP 2026 took place on Jan. 31–Feb. 1, 2026, with the theme "Carnegie Cookout." Players face off as rival cat owners running competing noodle shops, racing to complete orders, earn money, and out-cook their competition. But when the claws come out, players can sabotage their rival\'s shop before rushing back to keep their own business afloat. May the best noodle win! 🍜🐾',
+      website: 'https://awap.acmatcmu.com/'
     },
     {
       name: 'Hackberry Pi 2026',
       imagePage: 'images/events/HackberryPi2026.png',
-      link: 'https://www.acmatcmu.com/#/hackberrypi'
+      imagePopups: ['images/events/HackberryPi2026.png'],
+      description:
+        'In celebration of Pi Day, teams of up to four were given a Pi and accessories on kickoff day, then had one week to build and demo creative hardware or connectivity projects. Participants of all experience levels came together to learn, experiment, and showcase their IoT creations. QNX was our leading sponsor this year, providing QNX kits so participants could get hands-on experience trying out their software.',
+      website: 'https://www.acmatcmu.com/#/hackberrypi'
     },
     {
       name: 'HackCMU 2025',
