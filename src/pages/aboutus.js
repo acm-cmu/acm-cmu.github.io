@@ -5,8 +5,8 @@ const profiles_current = [
     id: "katiew",
     name: "Katie Wang",
     title: "President",
-    image: "headshots/temp.png",
-    linkedin: "",
+    image: "headshots/katie.jpg",
+    linkedin: "https://www.linkedin.com/in/kathleenzwang/",
   },
   {
     id: "vincentl",
