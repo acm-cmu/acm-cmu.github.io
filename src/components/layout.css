@@ -36,6 +36,10 @@
   text-decoration: none;
 }
 
+#navbar li a#hackcmu2026 {
+  color: #5aa9e6;
+}
+
 #bash {
   display: inline-block;
   width: auto;

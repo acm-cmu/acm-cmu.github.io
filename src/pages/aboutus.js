@@ -75,7 +75,7 @@ const profiles_current = [
     id: "rachelt",
     name: "Rachel Tong",
     title: "Design Chair",
-    image: "headshots/temp.png",
+    image: "headshots/rachel.jpg",
     linkedin: "https://www.linkedin.com/in/racheltong29",
   },
 ];
