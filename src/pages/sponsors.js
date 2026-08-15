@@ -1,185 +1,133 @@
 import React, { useState } from "react";
 import "./sponsors.css";
-import { Link } from 'react-router-dom';
 
-// Reuse your existing ResponsiveImage component
+// Responsive image with a safe fallback if a .webp sibling doesn't exist
 function ResponsiveImage({ src, alt, className }) {
+  const [webpFailed, setWebpFailed] = useState(false);
   const publicSrc = `${process.env.PUBLIC_URL}/${src}`;
-  const webpSrc = publicSrc.replace(/\.png$/, '.webp');
+  const webpSrc = publicSrc.replace(/\.png$/, ".webp");
 
-  const handleError = (e) => {
-    if (e.target.src.endsWith('.webp')) {
-      e.target.src = publicSrc;
-    }
-  };
+  if (webpFailed) {
+    return (
+      <img src={publicSrc} alt={alt} className={className} loading="lazy" />
+    );
+  }
 
   return (
     <picture>
-      <source srcSet={webpSrc} type="image/webp" onError={handleError} />
-      <source srcSet={publicSrc} type="image/png" />
-      <img src={publicSrc} alt={alt} className={className} loading="lazy" onError={handleError} />
+      <source srcSet={webpSrc} type="image/webp" />
+      <img
+        src={publicSrc}
+        alt={alt}
+        className={className}
+        loading="lazy"
+        onError={() => setWebpFailed(true)}
+      />
     </picture>
   );
 }
 
-// Popup component for sponsor
-function Popup({ sponsor, onClose }) {
-  if (!sponsor) return null;
-
-  return (
-    <div className="popup-overlay" onClick={onClose}>
-      <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        <ResponsiveImage src={sponsor.imagePopup} alt={sponsor.name} className="popup-image" />
-        <div className="popup-text">
-          <h2>{sponsor.name}</h2>
-          <p>{sponsor.description}</p>
-          <a href={sponsor.link} target="_blank" rel="noopener noreferrer">Visit Website</a>
-        </div>
-      </div>
-    </div>
-  );
-}
+const TIERS = [
+  {
+    id: "gold",
+    name: "Gold",
+    color: "#FFD54A",
+    glow: "rgba(255, 213, 74, 0.1)",
+    sponsors: [
+      {
+        name: "HRT",
+        image: "images/sponsors/current_sponsors/hrt_logo.png",
+        link: "https://www.hudsonrivertrading.com/",
+      },
+    ],
+  },
+  {
+    id: "silver",
+    name: "Silver",
+    color: "#C9D3DC",
+    glow: "rgba(201, 211, 220, 0.1)",
+    sponsors: [
+      {
+        name: "Cursor",
+        image: "images/sponsors/current_sponsors/cursor_logo.png",
+        link: "https://cursor.com",
+      },
+    ],
+  },
+  {
+    id: "bronze",
+    name: "Bronze",
+    color: "#D48A54",
+    glow: "rgba(212, 138, 84, 0.1)",
+    sponsors: [
+      {
+        name: "Citadel",
+        image: "images/sponsors/current_sponsors/citadel_logo.png",
+        link: "https://www.citadel.com",
+      },
+      {
+        name: "D. E. Shaw",
+        image: "images/sponsors/current_sponsors/de_shaw_logo.png",
+        link: "https://www.deshaw.com",
+      },
+      {
+        name: "Jane Street",
+        image: "images/sponsors/current_sponsors/jane_street_logo.png",
+        link: "https://www.janestreet.com",
+      },
+      {
+        name: "Microsoft",
+        image: "images/sponsors/current_sponsors/microsoft_logo.png",
+        link: "https://www.microsoft.com",
+      },
+      {
+        name: "Quadrature",
+        image: "images/sponsors/current_sponsors/quadrature_logo.png",
+        link: "https://www.quadrature.ai",
+      },
+    ],
+  },
+  {
+    id: "supporters",
+    name: "Base",
+    color: "#8FB4E3",
+    glow: "rgba(143, 180, 227, 0.08)",
+    sponsors: [
+      {
+        name: "Adobe",
+        image: "images/sponsors/current_sponsors/adobe_logo.png",
+        link: "https://www.adobe.com",
+      },
+      {
+        name: "Garner Health",
+        image: "images/sponsors/current_sponsors/garner_health_logo.png",
+        link: "https://www.getgarner.com",
+      },
+      {
+        name: "Lockheed Martin",
+        image: "images/sponsors/current_sponsors/lockeed_martin_logo.png",
+        link: "https://www.lockheedmartin.com",
+      },
+      {
+        name: "SCM",
+        image: "images/sponsors/current_sponsors/scm_logo.png",
+        link: "https://www.scm-lp.com/",
+      },
+      {
+        name: "Texas Instruments",
+        image: "images/sponsors/current_sponsors/texas_instruments_logo.png",
+        link: "https://www.ti.com",
+      },
+      {
+        name: "Visa",
+        image: "images/sponsors/current_sponsors/visa_logo.png",
+        link: "https://usa.visa.com/careers.html",
+      },
+    ],
+  },
+];
 
 export default function Sponsors() {
-  const [selectedSponsor, setSelectedSponsor] = useState(null);
-
-  const sponsors = [
-    {
-      name: "Anthropic",
-      imagePage: "images/sponsors/anthropic.png",
-      imagePopup: "images/sponsors/anthropic.png",
-      description: "Anthropic",
-      link: "https://www.anthropic.com"
-    },
-    {
-      name: "Bloomberg",
-      imagePage: "images/sponsors/bloomberg.png",
-      imagePopup: "images/sponsors/bloomberg.png",
-      description: "Bloomberg",
-      link: "https://www.bloomberg.com/"
-    },
-    {
-      name: "Citadel",
-      imagePage: "images/sponsors/citadel.png",
-      imagePopup: "images/sponsors/citadel.png",
-      description: "A leading global financial institution.",
-      link: "https://www.citadel.com"
-    },
-    {
-      name: "D. E. Shaw",
-      imagePage: "images/sponsors/deshaw.png",
-      imagePopup: "images/sponsors/deshaw.png",
-      description: "A global investment and technology development firm.",
-      link: "https://www.deshaw.com"
-    },
-    {
-      name: "Ethereum",
-      imagePage: "images/sponsors/ethereum.png",
-      imagePopup: "images/sponsors/ethereum.png",
-      description: "Ethereum",
-      link: "https://ethereum.org"
-    },
-    {
-      name: "HRT",
-      imagePage: "images/sponsors/hrt.png",
-      imagePopup: "images/sponsors/hrt.png",
-      description: "Hudson River Trading, quantitative trading firm.",
-      link: "https://www.hudsonrivertrading.com/"
-    },
-    {
-      name: "Jane Street",
-      imagePage: "images/sponsors/janestreet.png",
-      imagePopup: "images/sponsors/janestreet.png",
-      description: "Global trading firm.",
-      link: "https://www.janestreet.com"
-    },
-    {
-      name: "Jump Trading",
-      imagePage: "images/sponsors/jump.png",
-      imagePopup: "images/sponsors/jump.png",
-      description: "Jump Trading",
-      link: "https://www.jumptrading.com/"
-    },
-    {
-      name: "Lockheed Martin",
-      imagePage: "images/sponsors/lockheed.png",
-      imagePopup: "images/sponsors/lockheed.png",
-      description: "Aerospace and defense company.",
-      link: "https://www.lockheedmartin.com"
-    },
-    {
-      name: "QNX",
-      imagePage: "images/sponsors/qnx.png",
-      imagePopup: "images/sponsors/qnx.png",
-      description: "QNX Software Systems.",
-      link: "https://qnx.software/en"
-    },
-    {
-      name: "Ripple",
-      imagePage: "images/sponsors/ripple.png",
-      imagePopup: "images/sponsors/ripple.png",
-      description: "Ripple's University Blockchain Research Initiative.",
-      link: "https://ripple.com/impact/ubri/"
-    },
-    {
-      name: "Roblox",
-      imagePage: "images/sponsors/roblox.png",
-      imagePopup: "images/sponsors/roblox.png",
-      description: "Roblox",
-      link: "https://corp.roblox.com/"
-    },
-    {
-      name: "Sandia",
-      imagePage: "images/sponsors/sandia.png",
-      imagePopup: "images/sponsors/sandia.png",
-      description: "Sandia National Laboratories.",
-      link: "https://www.sandia.gov"
-    },
-    {
-      name: "SCM",
-      imagePage: "images/sponsors/scm.png",
-      imagePopup: "images/sponsors/scm.png",
-      description: "Steven's Capital Management.",
-      link: "https://www.scm-lp.com/"
-    },
-    {
-      name: "Stripe",
-      imagePage: "images/sponsors/stripe.png",
-      imagePopup: "images/sponsors/stripe.png",
-      description: "Online payment processing for internet businesses.",
-      link: "https://stripe.com"
-    },
-    {
-      name: "The Trade Desk",
-      imagePage: "images/sponsors/thetradedesk.png",
-      imagePopup: "images/sponsors/thetradedesk.png",
-      description: "World-class digital advertising platform.",
-      link: "https://www.thetradedesk.com/us"
-    },
-    {
-      name: "Visa",
-      imagePage: "images/sponsors/visa.png",
-      imagePopup: "images/sponsors/visa.png",
-      description: "Visa",
-      link: "https://usa.visa.com/careers.html"
-    },
-    {
-      name: "Y Combinator",
-      imagePage: "images/sponsors/YC.png",
-      imagePopup: "images/sponsors/YC.png",
-      description: "Y Combinator",
-      link: "https://www.ycombinator.com/"
-    }
-  ];
-
-  const handleSponsorClick = (sponsor) => {
-    setSelectedSponsor(sponsor);
-  };
-
-  const handleClosePopup = () => {
-    setSelectedSponsor(null);
-  };
-
   return (
     <div id="sponsors">
       <div className="container">
@@ -192,16 +140,31 @@ export default function Sponsors() {
           Interested in sponsoring us? Email us at <a href="mailto:acm-exec@cs.cmu.edu">acm-exec@cs.cmu.edu</a>.
         </div>
 
-        <div className="grid" id="logo-grid">
-          {sponsors.map((sponsor, index) => (
-            <div className="event-item" key={index}>
-              <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
-                <ResponsiveImage src={sponsor.imagePage} alt={sponsor.name} className="" />
-              </a>
+        {TIERS.map((tier) => (
+          <div
+            key={tier.id}
+            className={`tier-frame tier-frame-${tier.id}`}
+            style={{
+              "--tier-color": tier.color,
+              "--tier-glow": tier.glow,
+            }}
+          >
+            <div className="tier-label">{tier.name}</div>
+            <div className="tier-logo-grid">
+              {tier.sponsors.map((sponsor) => (
+                <a
+                  className="event-item sponsor-tile"
+                  key={sponsor.name}
+                  href={sponsor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ResponsiveImage src={sponsor.image} alt={sponsor.name} className="" />
+                </a>
+              ))}
             </div>
-          ))}
-        </div>
-        {selectedSponsor && <Popup sponsor={selectedSponsor} onClose={handleClosePopup} />}
+          </div>
+        ))}
       </div>
     </div>
   );

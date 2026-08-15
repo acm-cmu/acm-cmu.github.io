@@ -1,27 +1,90 @@
-
-.sponsor-link {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 20px;
-  }
-  
-  .sponsor-link:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-.white-bg {
-  background-color: white;
+.tier-frame {
+  border: 1px solid var(--tier-color);
+  border-radius: 20px;
+  padding: 36px 24px;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 900px;
+  background:
+    linear-gradient(180deg, var(--tier-glow), transparent 65%),
+    var(--color-card-background);
+  box-shadow: 0 0 12px var(--tier-glow);
 }
 
-#logo-grid {
+.tier-label {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tier-color);
+  margin-bottom: 24px;
+}
+
+.tier-logo-grid {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   justify-content: center;
-  gap: 50px; /* more spacing between logos */
-  margin-top: 40px;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
 }
 
-#logo-grid .event-item img {
-  max-width: 220px; /* increase logo size */
+.sponsor-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sponsor-tile:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.sponsor-tile img {
+  display: block;
+  width: auto;
   height: auto;
+  object-fit: contain;
+}
+
+/* Size hierarchy per tier */
+.tier-frame-gold .sponsor-tile img {
+  max-width: 280px;
+  max-height: 120px;
+}
+
+.tier-frame-silver .sponsor-tile img {
+  max-width: 240px;
+  max-height: 100px;
+}
+
+.tier-frame-bronze .sponsor-tile img {
+  max-width: 190px;
+  max-height: 80px;
+}
+
+.tier-frame-supporters .sponsor-tile img {
+  max-width: 160px;
+  max-height: 70px;
+}
+
+@media screen and (max-width: 800px) {
+  .tier-frame {
+    padding: 24px 16px;
+    margin: 24px auto;
+  }
+
+  .tier-label {
+    font-size: 20px;
+  }
+
+  .tier-logo-grid {
+    gap: 16px;
+  }
 }
