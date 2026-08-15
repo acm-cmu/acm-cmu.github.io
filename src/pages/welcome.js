@@ -1,9 +1,12 @@
 import React from "react";
 import DecryptedText from "./DecryptedText";
+import Petals from "./Petals";
+import "./welcome.css";
 
 export default function Welcome() {
   return (
     <div class="welcome">
+      <Petals />
       <span class="text">
         <div class="container">
           {/* <div class="title" id="welcometext">
@@ -86,7 +89,7 @@ export default function Welcome() {
               </div>
             </div>
             <div class="infotext" id="questions">
-              Any questions? Email us at acm-exec@cs.cmu.edu.
+              Any questions? Email us at <a href="mailto:acm-exec@cs.cmu.edu">acm-exec@cs.cmu.edu</a>.
             </div>
             <div class="infotext" id="emaillist">
               <a href="https://lists.andrew.cmu.edu/mailman/listinfo/acm-public?fbclid=IwAR1sbGBAbrgVAUHODFJHHLLl82wYLo-FKQeTERFhztoTXPkI8MFmEdcce3Y">

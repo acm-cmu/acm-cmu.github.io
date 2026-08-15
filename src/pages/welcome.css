@@ -1,0 +1,135 @@
+.welcome {
+  position: relative;
+}
+
+/* Falling cherry blossom petals */
+.petal-field {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  top: -10%;
+  color: #ffb7c5;
+  filter: drop-shadow(0 0 3px rgba(255, 183, 197, 0.5));
+  animation-name: petal-fall, petal-sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  will-change: transform;
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes petal-sway {
+  0%,
+  100% {
+    margin-left: -24px;
+  }
+  50% {
+    margin-left: 24px;
+  }
+}
+
+/* Keep page content above the petals */
+.welcome .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Shades of pink for the hero title */
+.welcome .title {
+  color: #ff8fab;
+  text-shadow: 0 0 18px rgba(255, 143, 171, 0.35);
+}
+
+#welcometext .title:nth-child(4n + 1) {
+  color: #ffd1dc;
+}
+
+#welcometext .title:nth-child(4n + 2) {
+  color: #ff8fab;
+}
+
+#welcometext .title:nth-child(4n + 3) {
+  color: #ff5c8a;
+}
+
+#welcometext .title:nth-child(4n) {
+  color: #d6588a;
+}
+
+.welcome .infotext {
+  color: #e9cdd8;
+}
+
+.welcome .we-do-image i {
+  color: #ff8fab;
+}
+
+.welcome #learn-more-button {
+  border-color: #ff8fab;
+  color: #ff8fab;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.welcome #learn-more-button:hover {
+  background-color: #ff8fab;
+  color: #1a1e24;
+}
+
+.welcome #questions a {
+  color: #ff5c8a;
+  transition: color 0.2s ease;
+}
+
+.welcome #questions a:hover {
+  color: #ffd1dc;
+}
+
+.welcome #emaillist a {
+  position: relative;
+  color: #ffb7c5;
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.welcome #emaillist a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.welcome #emaillist a:hover {
+  color: #ffd1dc;
+  transform: translateY(-2px);
+}
+
+.welcome #emaillist a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal {
+    animation: none;
+    display: none;
+  }
+}
