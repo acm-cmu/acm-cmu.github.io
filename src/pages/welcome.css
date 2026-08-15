@@ -2,7 +2,8 @@
   position: relative;
 }
 
-/* Falling cherry blossom petals */
+/* Cherry blossom petals: spawn at the top, fall once, and stay put --
+   piling up near the bottom the longer you stay on the page. */
 .petal-field {
   position: fixed;
   inset: 0;
@@ -13,33 +14,33 @@
 
 .petal {
   position: absolute;
-  top: -10%;
   color: #ffb7c5;
   filter: drop-shadow(0 0 3px rgba(255, 183, 197, 0.5));
-  animation-name: petal-fall, petal-sway;
-  animation-timing-function: linear, ease-in-out;
-  animation-iteration-count: infinite, infinite;
+  transform: translateY(-100vh);
+  animation-name: petal-drift;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   will-change: transform;
 }
 
-@keyframes petal-fall {
+@keyframes petal-drift {
   0% {
-    transform: translateY(-10vh) rotate(0deg);
+    transform: translateY(-100vh) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-40vh) translateX(var(--petal-sway))
+      rotate(calc(var(--petal-rotate) * 0.5));
   }
   100% {
-    transform: translateY(110vh) rotate(360deg);
+    transform: translateY(0) translateX(0) rotate(var(--petal-rotate));
   }
 }
 
-@keyframes petal-sway {
-  0%,
-  100% {
-    margin-left: -24px;
-  }
-  50% {
-    margin-left: 24px;
-  }
-}
+/* Once the pile fills up, a gust picks every petal up from wherever it
+   currently is (falling or landed) and carries it off -- handled via
+   the Web Animations API in Petals.js so it can start from each
+   petal's actual current position instead of snapping first. */
 
 /* Keep page content above the petals */
 .welcome .container {
@@ -130,6 +131,6 @@
 @media (prefers-reduced-motion: reduce) {
   .petal {
     animation: none;
-    display: none;
+    transform: none;
   }
 }
