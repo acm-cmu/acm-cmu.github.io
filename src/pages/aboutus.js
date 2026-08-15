@@ -20,7 +20,7 @@ const profiles_current = [
     name: "Alana Pereira",
     title: "Secretary",
     image: "headshots/temp.png",
-    linkedin: "",
+    linkedin: "http://www.linkedin.com/in/alana-p-7b4289207",
   },
   {
     id: "veronicas",
@@ -68,8 +68,8 @@ const profiles_current = [
     id: "nirp",
     name: "Nir Pechuk",
     title: "Research Chair",
-    image: "headshots/temp.png",
-    linkedin: "",
+    image: "headshots/nir.JPEG",
+    linkedin: "https://www.linkedin.com/in/nirpechuk/",
   },
   {
     id: "rachelt",
