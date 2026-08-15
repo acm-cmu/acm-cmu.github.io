@@ -85,6 +85,11 @@ const TIERS = [
         image: "images/sponsors/current_sponsors/quadrature_logo.png",
         link: "https://www.quadrature.ai",
       },
+      {
+        name: "Sandia",
+        image: "images/sponsors/current_sponsors/sandia_logo.png",
+        link: "https://www.sandia.gov",
+      },
     ],
   },
   {
