@@ -47,8 +47,8 @@ const profiles_current = [
     id: "steveny",
     name: "Steven Yang",
     title: "Co-AWAP Lead",
-    image: "headshots/temp.png",
-    linkedin: "",
+    image: "headshots/steven.jpg",
+    linkedin: "https://www.linkedin.com/in/steven-yang-50583a243",
   },
   {
     id: "matthewm",

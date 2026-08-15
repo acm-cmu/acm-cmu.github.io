@@ -508,6 +508,12 @@ img#hrt {
   width: 200px;
 }
 
+#steveny .cropper img {
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 70%;
+}
+
 .profile-bio {
   padding-top: 10px;
   overflow: auto;
