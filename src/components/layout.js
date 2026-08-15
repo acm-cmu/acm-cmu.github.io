@@ -38,8 +38,7 @@ export default function Layout({ children }) {
   // Check if the current path should bypass the global layout
   const bypassLayout =
     location.pathname === "/hackcmu" ||
-    location.pathname === "/hackberrypi" ||
-    location.pathname === "/hackcmu2026";
+    location.pathname === "/hackberrypi";
 
   if (bypassLayout) {
     return <>{children}</>;
