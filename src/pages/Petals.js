@@ -157,7 +157,6 @@ export default function Petals() {
           size,
           rotate: randomBetween(0, 360),
           duration: randomBetween(4, 8),
-          sway: randomBetween(20, 60) * (Math.random() < 0.5 ? -1 : 1),
           glyph: PETAL_GLYPHS[Math.floor(Math.random() * PETAL_GLYPHS.length)],
           opacity: randomBetween(0.6, 0.95),
         };
@@ -186,7 +185,6 @@ export default function Petals() {
             fontSize: `${petal.size}px`,
             opacity: petal.opacity,
             animationDuration: `${petal.duration}s`,
-            "--petal-sway": `${petal.sway}px`,
             "--petal-rotate": `${petal.rotate}deg`,
           }}
         >

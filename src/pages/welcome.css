@@ -18,7 +18,7 @@
   filter: drop-shadow(0 0 3px rgba(255, 183, 197, 0.5));
   transform: translateY(-100vh);
   animation-name: petal-drift;
-  animation-timing-function: ease-in;
+  animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   will-change: transform;
@@ -26,14 +26,10 @@
 
 @keyframes petal-drift {
   0% {
-    transform: translateY(-100vh) translateX(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-40vh) translateX(var(--petal-sway))
-      rotate(calc(var(--petal-rotate) * 0.5));
+    transform: translateY(-100vh) rotate(0deg);
   }
   100% {
-    transform: translateY(0) translateX(0) rotate(var(--petal-rotate));
+    transform: translateY(0) rotate(var(--petal-rotate));
   }
 }
 
