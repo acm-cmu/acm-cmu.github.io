@@ -1,7 +1,8 @@
 html {
   height: 100%;
   color: var(--color-text);
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
@@ -13,7 +14,8 @@ body {
   margin: 0;
   top: 0px;
   background: var(--color-background);
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 

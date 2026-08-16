@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.8469730e.css",
+    "main.css": "/static/css/main.5a1680ce.css",
     "main.js": "/static/js/main.aa89d11a.js",
     "static/js/787.8641dad1.chunk.js": "/static/js/787.8641dad1.chunk.js",
     "static/media/2024cyberpunk1.png": "/static/media/2024cyberpunk1.e8d2832dd1d725749288.png",
@@ -42,12 +42,12 @@
     "static/media/tanishasaxena.jpg": "/static/media/tanishasaxena.9689bcb1f1ca8e6eb4a9.jpg",
     "static/media/scmlogo.svg": "/static/media/scmlogo.066ee8897bf8a5b59315a1dfba01fb33.svg",
     "index.html": "/index.html",
-    "main.8469730e.css.map": "/static/css/main.8469730e.css.map",
+    "main.5a1680ce.css.map": "/static/css/main.5a1680ce.css.map",
     "main.aa89d11a.js.map": "/static/js/main.aa89d11a.js.map",
     "787.8641dad1.chunk.js.map": "/static/js/787.8641dad1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8469730e.css",
+    "static/css/main.5a1680ce.css",
     "static/js/main.aa89d11a.js"
   ]
 }
