@@ -50,6 +50,7 @@
   display: block;
   width: auto;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -86,5 +87,31 @@
 
   .tier-logo-grid {
     gap: 16px;
+  }
+
+  .sponsor-tile {
+    padding: 12px 16px;
+  }
+
+  /* Shrink the size hierarchy so tiles + padding fit narrow phones
+     without overflowing horizontally. */
+  .tier-frame-gold .sponsor-tile img {
+    max-width: 200px;
+    max-height: 90px;
+  }
+
+  .tier-frame-silver .sponsor-tile img {
+    max-width: 170px;
+    max-height: 80px;
+  }
+
+  .tier-frame-bronze .sponsor-tile img {
+    max-width: 140px;
+    max-height: 65px;
+  }
+
+  .tier-frame-supporters .sponsor-tile img {
+    max-width: 120px;
+    max-height: 55px;
   }
 }

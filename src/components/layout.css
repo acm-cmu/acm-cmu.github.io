@@ -209,6 +209,7 @@
   display: flex;
   flex-flow: column;
   min-height: calc(100vh - 80px);
+  min-height: calc(100dvh - 80px);
   justify-content: center;
   align-items: center;
 }
@@ -615,6 +616,20 @@ img#hrt {
   .we-do {
     padding-top: 20px;
     width: 100%;
+  }
+
+  .grid {
+    width: 100%;
+  }
+
+  #events-grid img {
+    padding: 10px 12px;
+    height: 22vh;
+    max-width: calc(100vw - 90px);
+  }
+
+  #logo-grid img {
+    padding: 12px 16px;
   }
 
   .profile:hover .card {
