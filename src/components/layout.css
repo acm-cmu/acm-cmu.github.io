@@ -464,6 +464,7 @@ img#hrt {
   grid-row-start: 1;
   grid-column-start: 1;
   width: 200px;
+  margin: 0 auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }

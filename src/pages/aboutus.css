@@ -1,0 +1,141 @@
+.role-frame {
+  box-sizing: border-box;
+  border: 1px solid var(--role-color);
+  border-radius: 20px;
+  padding: 36px 24px;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 900px;
+  background:
+    linear-gradient(180deg, var(--role-glow), transparent 65%),
+    var(--color-card-background);
+  box-shadow: 0 0 12px var(--role-glow);
+}
+
+.role-row {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.role-row .role-frame {
+  margin: 0;
+  width: auto;
+  max-width: none;
+}
+
+@media screen and (max-width: 640px) {
+  .role-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.role-label {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--role-color);
+  margin-bottom: 24px;
+}
+
+.role-member-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* .profile normally lives in a CSS grid (#profile-container) where
+   width:100% fills its grid cell; inside this flex row it needs a
+   fixed basis instead, or every card fights for the full row width
+   and the group ends up hugging one side instead of centering. */
+.role-member-grid .profile {
+  width: auto;
+  flex: 0 0 220px;
+  max-width: 220px;
+}
+
+.role-subsections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.role-subsection-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+
+.role-subsection-row + .role-subsection-row {
+  padding-top: 24px;
+  border-top: 1px solid var(--role-color);
+}
+
+.role-subsection {
+  flex: 1 1 200px;
+  max-width: 260px;
+}
+
+/* A subsection alone on its row (like AWAP) isn't sharing space with
+   a sibling, so let it stretch wide enough for its members to sit in
+   one horizontal line instead of being capped to a narrow column. */
+.role-subsection-row .role-subsection:only-child {
+  max-width: 100%;
+}
+
+.role-subsection-row .role-subsection + .role-subsection {
+  padding-left: 32px;
+  border-left: 1px solid var(--role-color);
+}
+
+@media screen and (max-width: 640px) {
+  .role-subsection-row .role-subsection + .role-subsection {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+.role-sublabel {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-bottom: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .role-frame {
+    padding: 24px 16px;
+    margin: 24px auto;
+  }
+
+  .role-label {
+    font-size: 20px;
+  }
+
+  .role-member-grid {
+    gap: 1.25rem;
+  }
+
+  .role-member-grid .profile {
+    flex-basis: 160px;
+    max-width: 160px;
+  }
+}
