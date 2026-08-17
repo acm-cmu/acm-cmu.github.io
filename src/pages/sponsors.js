@@ -114,6 +114,11 @@ const TIERS = [
         link: "https://www.lockheedmartin.com",
       },
       {
+        name: "Roblox",
+        image: "images/sponsors/current_sponsors/roblox_logo.png",
+        link: "https://corp.roblox.com/",
+      },
+      {
         name: "SCM",
         image: "images/sponsors/current_sponsors/scm_logo.png",
         link: "https://www.scm-lp.com/",
