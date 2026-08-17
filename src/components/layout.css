@@ -529,6 +529,13 @@ img#hrt {
   object-position: 50% 40%;
 }
 
+#veronicas .cropper img {
+  height: 200px;
+  object-fit: cover;
+  object-position: 90% 50%;
+  transform: scale(3.5);
+}
+
 .profile-bio {
   padding-top: 10px;
   overflow: auto;
