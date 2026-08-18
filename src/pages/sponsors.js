@@ -114,6 +114,11 @@ const TIERS = [
         link: "https://www.lockheedmartin.com",
       },
       {
+        name: "Querit",
+        image: "images/sponsors/current_sponsors/querit_logo.png",
+        link: "https://www.querit.ai/en",
+      },
+      {
         name: "Roblox",
         image: "images/sponsors/current_sponsors/roblox_logo.png",
         link: "https://corp.roblox.com/",
@@ -161,17 +166,21 @@ export default function Sponsors() {
           >
             <div className="tier-label">{tier.name}</div>
             <div className="tier-logo-grid">
-              {tier.sponsors.map((sponsor) => (
-                <a
-                  className="event-item sponsor-tile"
-                  key={sponsor.name}
-                  href={sponsor.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ResponsiveImage src={sponsor.image} alt={sponsor.name} className="" />
-                </a>
-              ))}
+              {tier.sponsors.map((sponsor) => {
+                const TileTag = sponsor.link ? "a" : "div";
+                const linkProps = sponsor.link
+                  ? { href: sponsor.link, target: "_blank", rel: "noopener noreferrer" }
+                  : {};
+                return (
+                  <TileTag
+                    className="event-item sponsor-tile"
+                    key={sponsor.name}
+                    {...linkProps}
+                  >
+                    <ResponsiveImage src={sponsor.image} alt={sponsor.name} className="" />
+                  </TileTag>
+                );
+              })}
             </div>
           </div>
         ))}
