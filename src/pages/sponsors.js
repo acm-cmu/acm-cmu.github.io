@@ -109,6 +109,11 @@ const TIERS = [
         link: "https://www.adobe.com",
       },
       {
+        name: "Bloomberg",
+        image: "images/sponsors/current_sponsors/bloomberg_logo.png",
+        link: "https://www.bloomberg.com/",
+      },
+      {
         name: "Garner Health",
         image: "images/sponsors/current_sponsors/garner_health_logo.png",
         link: "https://www.getgarner.com",
