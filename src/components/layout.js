@@ -57,9 +57,14 @@ export default function Layout({ children }) {
         </label>
         <ul id="navigation">
           <li>
-            <Link to="/hackcmu2026" id="hackcmu2026">
+            <a
+              href="https://www.acmatcmu.com/hackcmu2026/"
+              id="hackcmu2026"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               HackCMU_2026
-            </Link>
+            </a>
           </li>
           <li>
             <Link to="/welcome" id="welcome">

@@ -153,7 +153,7 @@ export default function Events() {
     {
       name: 'HackCMU 2026',
       imagePage: 'images/events/hackcmu-2026.png',
-      link: '/hackcmu2026'
+      link: 'https://www.acmatcmu.com/hackcmu2026/'
     }
   ];
 

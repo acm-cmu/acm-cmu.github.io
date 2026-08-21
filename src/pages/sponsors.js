@@ -99,6 +99,11 @@ const TIERS = [
     glow: "rgba(143, 180, 227, 0.08)",
     sponsors: [
       {
+        name: "a16z",
+        image: "images/sponsors/current_sponsors/a16z_speedrun_alpha_logo.png",
+        link: "https://alpha.a16zspeedrun.com/",
+      },
+      {
         name: "Adobe",
         image: "images/sponsors/current_sponsors/adobe_logo.png",
         link: "https://www.adobe.com",
