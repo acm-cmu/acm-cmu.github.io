@@ -76,6 +76,11 @@ const TIERS = [
         link: "https://www.janestreet.com",
       },
       {
+        name: "Jump Trading",
+        image: "images/sponsors/current_sponsors/jump_logo.png",
+        link: "https://www.jumptrading.com/",
+      },
+      {
         name: "Microsoft",
         image: "images/sponsors/current_sponsors/microsoft_logo.png",
         link: "https://www.microsoft.com",
