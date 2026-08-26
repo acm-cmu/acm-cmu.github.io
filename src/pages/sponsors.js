@@ -29,6 +29,19 @@ function ResponsiveImage({ src, alt, className }) {
 
 const TIERS = [
   {
+    id: "platinum",
+    name: "Platinum",
+    color: "#E8ECF1",
+    glow: "rgba(232, 236, 241, 0.18)",
+    sponsors: [
+      {
+        name: "IFM",
+        image: "images/sponsors/current_sponsors/IFM_logo.png",
+        link: "https://ifm.ai/",
+      },
+    ],
+  },
+  {
     id: "gold",
     name: "Gold",
     color: "#FFD54A",

@@ -54,7 +54,85 @@
   object-fit: contain;
 }
 
+/* Platinum: shimmering sweep + pulsing glow + a metallic label,
+   since it now sits above Gold in the hierarchy. */
+.tier-frame-platinum {
+  position: relative;
+  overflow: hidden;
+  animation: platinum-glow 3s ease-in-out infinite alternate;
+}
+
+.tier-frame-platinum::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 46%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.3) 54%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: platinum-shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.tier-frame-platinum .tier-label {
+  background: linear-gradient(90deg, #aab4c2 0%, #ffffff 50%, #aab4c2 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: platinum-label-shimmer 3s linear infinite;
+}
+
+.tier-frame-platinum .sponsor-tile {
+  background: linear-gradient(135deg, #ffffff, #e4e9ef);
+}
+
+@keyframes platinum-shimmer {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: -50% 0;
+  }
+}
+
+@keyframes platinum-label-shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes platinum-glow {
+  from {
+    box-shadow: 0 0 12px var(--tier-glow);
+  }
+  to {
+    box-shadow: 0 0 32px var(--tier-glow), 0 0 50px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tier-frame-platinum,
+  .tier-frame-platinum::before,
+  .tier-frame-platinum .tier-label {
+    animation: none;
+  }
+}
+
 /* Size hierarchy per tier */
+.tier-frame-platinum .sponsor-tile img {
+  max-width: 320px;
+  max-height: 140px;
+}
+
 .tier-frame-gold .sponsor-tile img {
   max-width: 280px;
   max-height: 120px;
@@ -95,6 +173,11 @@
 
   /* Shrink the size hierarchy so tiles + padding fit narrow phones
      without overflowing horizontally. */
+  .tier-frame-platinum .sponsor-tile img {
+    max-width: 230px;
+    max-height: 100px;
+  }
+
   .tier-frame-gold .sponsor-tile img {
     max-width: 200px;
     max-height: 90px;
