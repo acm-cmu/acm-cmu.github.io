@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.77747877.css",
-    "main.js": "/static/js/main.a58037df.js",
+    "main.js": "/static/js/main.9f92db09.js",
     "static/js/787.8641dad1.chunk.js": "/static/js/787.8641dad1.chunk.js",
     "static/media/2024cyberpunk1.png": "/static/media/2024cyberpunk1.e8d2832dd1d725749288.png",
     "static/media/2024cyberpunk.png": "/static/media/2024cyberpunk.89ba01023a19eb67eb14.png",
@@ -43,11 +43,11 @@
     "static/media/scmlogo.svg": "/static/media/scmlogo.066ee8897bf8a5b59315a1dfba01fb33.svg",
     "index.html": "/index.html",
     "main.77747877.css.map": "/static/css/main.77747877.css.map",
-    "main.a58037df.js.map": "/static/js/main.a58037df.js.map",
+    "main.9f92db09.js.map": "/static/js/main.9f92db09.js.map",
     "787.8641dad1.chunk.js.map": "/static/js/787.8641dad1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77747877.css",
-    "static/js/main.a58037df.js"
+    "static/js/main.9f92db09.js"
   ]
 }
